@@ -13,4 +13,4 @@ Contents
    guidelines
    software 
    tutorials
-   wet_protocols
+   electron_microscopy

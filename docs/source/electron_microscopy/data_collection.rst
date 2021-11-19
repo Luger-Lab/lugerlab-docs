@@ -28,8 +28,8 @@ Getting started
 #. Make sure the beam is spread
 
   - open the viewing window and adjust using intensity dial
-	-	if column valves are closed, you won't see anything
-	- just set the C2 value on screen ~50%
+  -	if column valves are closed, you won't see anything
+  - just set the C2 value on screen ~50%
 
 Removing the sample holder
 ~~~~~~~~~~~~~~~~~~~~~~~~~~

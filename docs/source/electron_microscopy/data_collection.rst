@@ -29,7 +29,7 @@ Getting started
 #. Make sure the beam is spread
 
    - open the viewing window and adjust using intensity dial
-   -	if column valves are closed, you won't see anything
+   - if column valves are closed, you won't see anything
    - just set the C2 value on screen ~50%
 
 Removing the sample holder
@@ -62,8 +62,8 @@ Setting up acquisition software
 #. Open camera software (AMT icon) and move to other screen
 #. Start a new case study under ``File>New Case Study``
 
-   - Make a new folder under your lab and user on the ``192...`` server
-   - Make a new case study with the sample and grid number (make a new one for every grid)
+   - make a new folder under your lab and user on the ``192...`` server
+   - make a new case study with the sample and grid number (make a new one for every grid)
 
 Eucentric focusing (alpha wobbler adjustment)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

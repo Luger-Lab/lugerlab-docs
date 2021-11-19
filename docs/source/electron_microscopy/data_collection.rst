@@ -16,9 +16,6 @@ Getting started
 #. Log into the Windows server
 #. Check liquid nitrogen dewar and top off if necessary on right hand side of column
 #. Check if ``High Tension`` and ``Filament`` are on (buttons are yellow when on)
-
-  - if not, turn them on (``High Tension`` first, then ``Filament``)
-  - wait at least 5 min after turning on the filament to collect data
 #. Gun/Col vacuum should ideally read log 6
 
 	- if sample has been inserted, often goes to log 12-14

@@ -23,7 +23,6 @@ Getting started
 
 	- if sample has been inserted, often goes to log 12-14
 	- if higher than that, seek Garry's help
-
 #. Make sure the column valves are closed (button should be yellow)
 #. Make sure the beam is spread
 

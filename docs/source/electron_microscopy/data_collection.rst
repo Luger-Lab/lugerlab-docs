@@ -18,11 +18,10 @@ Getting started
 #. Check if ``High Tension`` and ``Filament`` are on (buttons are yellow when on)
 
   - if not, turn them on (``High Tension`` first, then ``Filament``)
-	- wait at least 5 min after turning on the filament to collect data
+  - wait at least 5 min after turning on the filament to collect data
+#. Gun/Col vacuum should ideally read log 6
 
-#. Gun/Col vacuum should ideally read 6
-
-	- if sample has been inserted, often goes to 12-14
+	- if sample has been inserted, often goes to log 12-14
 	- if higher than that, seek Garry's help
 
 #. Make sure the column valves are closed (button should be yellow)

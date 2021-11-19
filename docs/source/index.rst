@@ -13,4 +13,4 @@ Contents
    guidelines
    software 
    tutorials
-   electron_microscopy
+   protocols

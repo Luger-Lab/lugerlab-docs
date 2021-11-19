@@ -2,12 +2,12 @@
 
 # -- Project information
 
-project = 'Lumache'
-copyright = '2021, Graziella'
-author = 'Graziella'
+project = 'lugerlab'
+copyright = '2021, Shawn Laursen'
+author = 'Shawn Laursen'
 
 release = '0.1'
-version = '0.1.0'
+version = '0.1'
 
 # -- General configuration
 

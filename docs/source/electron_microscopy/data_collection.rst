@@ -62,8 +62,8 @@ Setting up acquisition software
 #. Open camera software (AMT icon) and move to other screen
 #. Start a new case study under ``File>New Case Study``
 
-  - Make a new folder under your lab and user on the ``192...`` server
-  - Make a new case study with the sample and grid number (make a new one for every grid)
+   - Make a new folder under your lab and user on the ``192...`` server
+   - Make a new case study with the sample and grid number (make a new one for every grid)
 
 Eucentric focusing (alpha wobbler adjustment)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

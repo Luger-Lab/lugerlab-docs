@@ -10,7 +10,6 @@ Contents
 .. toctree::
    :maxdepth: 2
 
-   guidelines
-   software 
-   tutorials
    protocols
+   computers
+   tutorials

@@ -24,7 +24,8 @@ Making 2.5% uranyl formate solution (enough for 4 grids)
 
 Discharging grid
 ~~~~~~~~~~~~~~~~
-*use CF400-CU UL (or similar) grids, **do not use formvar grids***
+**Use CF400-CU UL (or similar) grids, do not use formvar grids.**
+
 #. Load the ``20nm carbon`` recipe on the plasma cleaner
 #. Vent the chamber to open
 #. Place grids in grid holder
@@ -35,3 +36,37 @@ Discharging grid
 #. Take out grids, replace door
 #. ``Pump Down`` chamber to ~30mTor
 #. ``Finish Up`` to place in standby 
+
+Staining
+~~~~~~~~
+**If sample has >10% glycerol, wash sample in non-glycerol buffer after sample application (and incubation time), but before first UF staining.**
+
+#. Pick up charged grid (dull side up) with clamping tweezers
+#. Apply 4uL of sample onto surface of carbon, without touching pipette to grid
+#. Incubate sample for ~30s 
+#. Line up 5x35uL drops of UF on parafilm
+#. After incubation, apply carbon side of grid to first UF drop, using surface tension to soak grid from only carbon side
+#. Blot immediately to remove UF crystals
+#. Use same surface tension to carbon approach to move through each of the next 4 drops of UF
+
+    - Swirl and spend 10s in each drop
+    - Do not blot between drops
+
+#. Blot after applying sample to the last drop
+
+    - Be thorough with blot, but leave thin layer 
+    - Also blot between tweezer tips
+
+#. Allow sample to dry ~30s before depositing in box
+#. Dispose of filter paper and tips in radioactive waste, if contaminated with UF
+#. Repeat for susequent grids
+
+Clean up
+~~~~~~~~
+#. Pipette unused UF onto parafilm
+#. Soak up UF with filter paper, dispose in radioactive waste
+#. Ball up parafilm, dispose in radioactive waste
+#. Change absorbant pad, if contaminated
+#. Lock up radioactive waste
+#. Return all tools to storage places
+  

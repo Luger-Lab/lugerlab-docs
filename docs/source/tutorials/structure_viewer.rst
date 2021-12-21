@@ -36,8 +36,8 @@ Protocol
 
 #. If you cloned your VM, you should be able to use ``sudo systemctl start httpd`` to start your website
 
-   - put new htmls (or files) in /var/www/html/<virtual-host> (store sensative data in a different directory and link to it from within html) 
-   - access new website at ``http://<your-scinet-public-ip>/<your-file.html> 
+   - put new htmls (or files) in ``/var/www/html/<virtual-host>`` (store sensative data in a different directory and link to it from within html) 
+   - access new website at ``http://<your-scinet-public-ip>/<your-file.html>`` 
 
 #. If you didn't clone your VM, install Apache:
 
@@ -50,7 +50,8 @@ Protocol
 #. You can then make structure viewer using `3Dmol.js <https://3dmol.csb.pitt.edu/>`_
 #. Basic example of an html file using this:
 
-```<!DOCTYPE html>
+```
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">

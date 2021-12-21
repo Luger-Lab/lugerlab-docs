@@ -55,6 +55,7 @@ Other
 .. toctree::
    :maxdepth: 1
 
+   tutorials/structure_viewer
    tutorials/ultrascan
    tutorials/figures
    tutorials/talks

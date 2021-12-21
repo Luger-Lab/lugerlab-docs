@@ -1,20 +1,19 @@
 How to make a structure viewer VM
 =================================
-.. raw:: html
 
-    <embed>
-    <!DOCTYPE html>
-    <html lang="en">
-      <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0"/>
-      </head>
-      <body>
-        <script src="https://3Dmol.org/build/3Dmol-min.js" async></script>
-          <div id="container-01"; style="height: 100vh; width: 100%; position: relative;" class='viewer_3Dmoljs' data-href='1aoi.pdb' data-backgroundcolor='0xffffff' data-style='cartoon' ></div>       
-      </body>
-    </html>
-    </embed>
+<embed>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0"/>
+  </head>
+  <body>
+    <script src="https://3Dmol.org/build/3Dmol-min.js" async></script>
+      <div id="container-01"; style="height: 100vh; width: 100%; position: relative;" class='viewer_3Dmoljs' data-href='1aoi.pdb' data-backgroundcolor='0xffffff' data-style='cartoon' ></div>
+  </body>
+</html>
+</embed>
 
 Goal
 ----
@@ -42,17 +41,17 @@ Protocol
    - launch the instance
 
 #. Allocate and associate a floating IP from scinet-public
-#. Edit port security groups to match instance 
+#. Edit port security groups to match instance
 #. You should now be able to access your VM
-#. ``ssh centos@<your.floating.ip.address>`` 
+#. ``ssh centos@<your.floating.ip.address>``
 
    - accept new fingerprint
    - will access VM as root, if your key pair is valid
 
 #. If you cloned your VM, you should be able to use ``sudo systemctl start httpd`` to start your website
 
-   - put new htmls (or files) in ``/var/www/html/<virtual-host>`` (store sensative data in a different directory and link to it from within html) 
-   - access new website at ``http://<your-scinet-public-ip>/<your-file.html>`` 
+   - put new htmls (or files) in ``/var/www/html/<virtual-host>`` (store sensative data in a different directory and link to it from within html)
+   - access new website at ``http://<your-scinet-public-ip>/<your-file.html>``
 
 #. If you didn't clone your VM, install Apache:
 
@@ -65,25 +64,22 @@ Protocol
 #. You can then make structure viewer using `3Dmol.js <https://3dmol.csb.pitt.edu/>`_
 #. Basic example of an html file using this:
 
-.. code-block:: html
+  .. code-block:: html
 
-   <!DOCTYPE html>
-   <html lang="en">
-   <head>
-     <meta charset="utf-8">
-     <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0"/>
-     <title>Shawn's biophys talk</title>
-   </head>
-   <body>
-     <script src="https://3Dmol.org/build/3Dmol-min.js" async></script>     
-       <div id="container-01"; style="height: 100vh; width: 100%; position: relative;" class='viewer_3Dmoljs' data-href='1aoi.pdb' data-backgroundcolor='0xffffff' data-style='cartoon' ></div>       
-   </body>
-   </html>
-
-
+     <!DOCTYPE html>
+     <html lang="en">
+     <head>
+       <meta charset="utf-8">
+       <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0"/>
+       <title>Shawn's biophys talk</title>
+     </head>
+     <body>
+       <script src="https://3Dmol.org/build/3Dmol-min.js" async></script>
+         <div id="container-01"; style="height: 100vh; width: 100%; position: relative;" class='viewer_3Dmoljs' data-href='1aoi.pdb' data-backgroundcolor='0xffffff' data-style='cartoon' ></div>
+     </body>
+     </html>
 
    - where ``data-href='1aoi.pdb'`` can be swapped out for any pdb file or you can use an accession (see `documentation <https://3dmol.csb.pitt.edu/>`_)
    - can also modify colors and styles
 
 #. Lastly, you can make a QR code by simple typing ``qr code <http://your.floating.ip.address/your-file.html>`` into Google and saving the image
-

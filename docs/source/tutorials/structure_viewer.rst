@@ -1,6 +1,8 @@
 How to make a structure viewer VM
 =================================
+
 ::
+
   <html lang="en">
   <head>
     <meta charset="utf-8">

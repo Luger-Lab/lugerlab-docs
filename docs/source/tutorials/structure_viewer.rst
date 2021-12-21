@@ -18,29 +18,38 @@ Protocol
 #. Create a router to route traffic to scinet-public
 #. Attach your new private network interface to the router
 #. Spawn a new virtual machine (or clone instance from working volume)
+
    - CentOS7 operating system, with 16GiB (or less)
    - Because we are just hosting a static webserver an m5.small should be fine
    - Add it to your new network
    - select the security groups required (probably at least default, http, https, and ssh-restricted)
    - add your devices' public key to the key pair (can't access VM without)
    - launch the instance
+
 #. Allocate and associate a floating IP from scinet-public
 #. Edit port security groups to match instance 
 #. You should now be able to access your VM
 #. ``ssh centos@<your.floating.ip.address>`` 
+
    - accept new fingerprint
    - will access VM as root, if your key pair is valid
+
 #. If you cloned your VM, you should be able to use ``sudo systemctl start httpd`` to start your website
+
    - put new htmls (or files) in /var/www/html/<virtual-host> (store sensative data in a different directory and link to it from within html) 
    - access new website at ``http://<your-scinet-public-ip>/<your-file.html> 
+
 #. If you didn't clone your VM, install Apache:
+
    - ``sudo yum install httpd``
    - ``sudo systemctl start httpd``
    - see if it's running: ``sudo systemctl status httpd``
+
 #. Create a virtual host `try here <https://www.tutorialspoint.com/how-to-setup-virtual-hosts-with-apache-web-server-on-linux>`_
 #. Add files to your virtual host
 #. You can then make structure viewer using `3Dmol.js <https://3dmol.csb.pitt.edu/>`_
 #. Basic example of an html file using this:
+
 ```<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -54,6 +63,9 @@ Protocol
 </body>
 </html>
 ```
+
    - where `data-href='1aoi.pdb'` can be swapped out for any pdb file or you can use an accession (see `documentation <https://3dmol.csb.pitt.edu/>`_)
    - can also modify colors and styles
+
 #. Lastly, you can make a QR code by simple typing `qr code <http://your.floating.ip.address/your-file.html>` into Google and saving the image
+

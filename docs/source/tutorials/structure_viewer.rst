@@ -64,8 +64,8 @@ Protocol
 </html>
 ```
 
-   - where `data-href='1aoi.pdb'` can be swapped out for any pdb file or you can use an accession (see `documentation <https://3dmol.csb.pitt.edu/>`_)
+   - where ``data-href='1aoi.pdb'`` can be swapped out for any pdb file or you can use an accession (see `documentation <https://3dmol.csb.pitt.edu/>`_)
    - can also modify colors and styles
 
-#. Lastly, you can make a QR code by simple typing `qr code <http://your.floating.ip.address/your-file.html>` into Google and saving the image
+#. Lastly, you can make a QR code by simple typing ``qr code <http://your.floating.ip.address/your-file.html>`` into Google and saving the image
 

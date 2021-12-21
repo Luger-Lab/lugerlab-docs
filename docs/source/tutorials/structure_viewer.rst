@@ -2,7 +2,6 @@ How to make a structure viewer VM
 =================================
 
 <embed>
-<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">

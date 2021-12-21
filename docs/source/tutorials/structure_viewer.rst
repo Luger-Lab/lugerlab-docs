@@ -1,19 +1,6 @@
 How to make a structure viewer VM
 =================================
 
-<embed>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0"/>
-  </head>
-  <body>
-    <script src="https://3Dmol.org/build/3Dmol-min.js" async></script>
-      <div id="container-01"; style="height: 100vh; width: 100%; position: relative;" class='viewer_3Dmoljs' data-href='1aoi.pdb' data-backgroundcolor='0xffffff' data-style='cartoon' ></div>
-  </body>
-</html>
-</embed>
-
 Goal
 ----
 Use a virtual machine to host a webpage that servers 3D structure viewers you

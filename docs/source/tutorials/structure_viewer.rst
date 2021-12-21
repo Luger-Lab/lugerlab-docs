@@ -66,6 +66,7 @@ Protocol
 #. Basic example of an html file using this:
 
 .. code-block:: html
+
    <!DOCTYPE html>
    <html lang="en">
    <head>

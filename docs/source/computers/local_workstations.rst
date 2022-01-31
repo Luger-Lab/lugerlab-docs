@@ -18,7 +18,7 @@ Gaining access to our workstations:
 
    - Windows users
 
-    #. Install `PuTTY <https://www.microsoft.com/en-us/p/putty-unofficial/9n8pdn6ks0f8?activetab=pivot:overviewtab>`
+    #. Install `PuTTY <https://www.microsoft.com/en-us/p/putty-unofficial/9n8pdn6ks0f8?activetab=pivot:overviewtab>`_
     #. In the ``Host Name (or IP Address)`` section, enter the <hostname> to one of the Workstations
     #. Make sure the ``Port`` is set to ``22``
     #. Select ``SSH`` as the ``Connection Type``

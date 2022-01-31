@@ -1,5 +1,5 @@
-Local workstation
-=================
+Local workstations
+==================
 
 We have four local workstations in lab, each equipped with 40CPUS, 4GPUS, and >50TB of storage.
 

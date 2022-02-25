@@ -72,10 +72,12 @@ Eucentric focusing (alpha wobbler adjustment)
 #. Press ``L1`` on left control panel to start alpha wobbler
 #. Adjust Z-height on right control panel using light taps on plus/minus buttons until the feature no longer moves away from the center
 #. Press ``L1`` again to turn off alpha wobbler
+
    - if it beeps while you are adjusting the alpha wobbler, then it has reached its limit.
    - first click "AB" to readjust the wobbler
    - then change Z-height to about 150 (without having the alpha wobbler turned on)
    - then try again to use the alpha wobbler by pressing ``L1``
+
 #. Press ``Eucentric Focus`` on right panel
 
 Adjusting the beam
@@ -86,8 +88,7 @@ Adjusting the beam
 
 Using the camera
 ~~~~~~~~~~~~~~~~
-#. Press ``Insert Camera`` on top right of acquisition panel
-   - before inserting camera make sure the intensity is 4 - 5 nanoAmps to prevent burnout of camera
+#. Press ``Insert Camera`` on top right of acquisition panel (before inserting camera make sure the intensity is 4 - 5 nanoAmps to prevent burnout of camera)
 #. Click ``Live Image``
 #. Adjust beam intensity, focus and mag as needed (generally need a mag of >40K to see particles)
 #. Click for final image and then right click on ``Save`` (this will close the final image and re-activate the live camera)

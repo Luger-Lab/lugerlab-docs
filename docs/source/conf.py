@@ -3,7 +3,7 @@
 # -- Project information
 
 project = 'lugerlab'
-copyright = '2021, Shawn Laursen'
+copyright = '2022, Shawn Laursen'
 author = 'Shawn Laursen'
 
 release = '0.1'

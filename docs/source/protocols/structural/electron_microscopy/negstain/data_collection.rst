@@ -1,16 +1,14 @@
-Data collection
-==================================
-Negative stain
---------------
+Negative stain data collection
+==============================
 *adapted from Johannes Rudolph*
 
-Goal
-~~~~
-Use the FEI Tecnai T12 TEM to image negative stain.
 
+Goal
+----
+Use the FEI Tecnai F30, 300kV FEG-TEM to collect negative stain.
 
 Getting started
-~~~~~~~~~~~~~~~
+---------------
 #. Get trained by Garry Morgan (garry.morgan@colorado.edu)
 #. Reserve time using the `online portal <https://www.colorado.edu/facility/ems/>`_
 #. Log into the Windows server
@@ -33,14 +31,14 @@ Getting started
    - just set the C2 value on screen ~50%
 
 Removing the sample holder
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------
 #. Pull straight out, resisting vacuum, with other hand on plate
 #. Turn CW until it stops
 #. Re-grip and break seal of vacuum with thumb on plate
 #. Pull straight out the rest of the way, slowly
 
 Loading grid into holder
-~~~~~~~~~~~~~~~~~~~~~~~~
+------------------------
 *Never touch bronze part of holder*
 
 #. Use pin to 'open door'
@@ -49,7 +47,7 @@ Loading grid into holder
 #. Give a gentle shake to make sure grid stays in there
 
 Inserting sample holder
-~~~~~~~~~~~~~~~~~~~~~~~
+-----------------------
 #. Put pin at 2 o'clock (sample will be oriented vertically)
 #. Insert slowly until pin hits a stop
 #. Gently push holder while turning CW, another 1 -2 cm. Do this rapidly without a pause.
@@ -58,7 +56,7 @@ Inserting sample holder
 #. Vacuum will draw the holder in: guide it slowly so it doesn't go too fast
 
 Setting up acquisition software
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------------
 #. Open camera software (AMT icon) and move to other screen
 #. Start a new case study under ``File>New Case Study``
 
@@ -66,7 +64,7 @@ Setting up acquisition software
    - make a new case study with the sample and grid number (make a new one for every grid)
 
 Eucentric focusing (alpha wobbler adjustment)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+---------------------------------------------
 #. Open the column valves to let beam through the screen
 #. Adjust mag and beam intensity and center on a feature of the grid
 #. Press ``L1`` on left control panel to start alpha wobbler
@@ -81,13 +79,13 @@ Eucentric focusing (alpha wobbler adjustment)
 #. Press ``Eucentric Focus`` on right panel
 
 Adjusting the beam
-~~~~~~~~~~~~~~
+------------------
 #. Insert objective using lever on side of scope
 #. Once in an area of interest, adjust mag and center beam with left track ball
 #. Also adjust intensity with dial on left control panel (should be 4-5 nanoAmps)
 
 Using the camera
-~~~~~~~~~~~~~~~~
+----------------
 #. Press ``Insert Camera`` on top right of acquisition panel (before inserting camera make sure the intensity is 4 - 5 nanoAmps to prevent burnout of camera)
 #. Click ``Live Image``
 #. Adjust beam intensity, focus and mag as needed (generally need a mag of >40K to see particles)
@@ -96,12 +94,12 @@ Using the camera
 *Pro-tip: focus/mag/ adjust in one spot; then move to a new spot nearby for an "undamaged" image*
 
 Adjusting FFT (as needed) - click on ``xxx``
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+--------------------------------------------
 
 .. _changing_grids:
 
 Changing grids
-~~~~~~~~~~~~~~
+--------------
 #. Click camera in to move the camera back out of the beam
 #. Lower Mag to ~1000x
 #. Reduce beam intensity to ~50%
@@ -109,7 +107,7 @@ Changing grids
 #. Close column valves **the most important thing!**
 
 Leaving the microscope
-~~~~~~~~~~~~~~~~~~~~~~
+----------------------
 #. Do :ref:`changing_grids` protocol
 #. Remove the holder from the microscope
 #. Remove your sample from the holder

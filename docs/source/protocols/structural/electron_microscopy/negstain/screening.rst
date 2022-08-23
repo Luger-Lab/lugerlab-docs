@@ -116,3 +116,14 @@ Leaving the microscope
 #. Leave ``High Tension`` on and column valves closed
 #. Log your time on the e-logger and the paper log
 #. Transfer your images from the Windows server to Google Drive
+
+Turning off the microscope if after 5 o'clock
+---------------------------------------------
+#. Turn off filament; wait about 2 min
+#. Remove center aperture (move objective lever on microscope to right)
+#. Turn off high tension
+#. Lift up styro mattress to protect equipment from liquid nitrogen
+#. Swap small styro dewer in for taller metal liquid N2 dewer (to catch braid)
+#. Press cryocycle button
+#. Turn off all 3 monitors
+#. Close locked doors behind you.

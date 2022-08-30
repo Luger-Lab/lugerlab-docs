@@ -14,7 +14,6 @@ Negative stain EM
 
    electron_microscopy/negstain/sample_prep
    electron_microscopy/negstain/screening
-   electron_microscopy/negstain/data_collection
    electron_microscopy/negstain/data_analysis
 
 CryoEM

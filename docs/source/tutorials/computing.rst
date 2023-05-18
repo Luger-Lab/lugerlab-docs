@@ -6,10 +6,7 @@ Goal
 To give a basic introduction to coding (in Bash) and how to use Linux based machines.
 
 .. toctree::
-   :maxdepth: 2
-
-   #linux
-   #bash
+   :maxdepth: 1
 
 Linux
 -----

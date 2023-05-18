@@ -8,7 +8,7 @@ To give a basic introduction to coding (in Bash) and how to use Linux based mach
 .. toctree::
    :maxdepth: 2
 
-    computing.rst/#linux
+    computing/#linux
 
 .. _linux:
 

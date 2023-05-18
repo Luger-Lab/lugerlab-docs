@@ -1,142 +1,144 @@
 Basic computing - Linux, Bash, and SLURM
 ========================================
 
-## Goal
+Goal
+----
 To give a basic introduction to coding (in Bash) and how to use Linux based machines.
 
-## Contents
-0. [Linux](#linux)
-0. [Bash](#bash)
+.. toctree::
+   :maxdepth: 1
 
-    0. [Description](#description)
-    0. [Setting up a sandbox](#setting-up-a-sandbox)
-    0. [Basic commands](#basic-commands)
-    0. [Navigation](#navigation)
-    0. [Variables](#variables)
-    0. [Arrays](#arrays)
-    0. [Loops](#loops)
-    0. [Text editors](#text-editors)
-    0. [Running scripts](#running-scripts)
-    0. [Connecting to remote computers](#connecting-to-remote-computers)
-    0. [Advanced commands](#advanced-commands)
+   Linux <linux>
+   Bash <bash>
 
-0. [SLURM](#slurm)
-
-    0. [Description](#description-1)
-    0. [Sbatch scripts](#sbatch-scripts)
-    0. [Queues](#queues)
-    0. [Out and error files](#out-and-error-files)
-    0. [Starting, stopping, and monitoring jobs](#starting-stopping-and-monitoring-jobs)
-
-## Linux
+Linux
+-----
 Linux is the kernel on which most high performance computing (HPC) is done. A kernel is the software that allows an operating system to control physical hardware. The Linux kernel is based on UNIX and is open source and free to use by anyone, as its creator [Linus Tuvolds](https://en.wikipedia.org/wiki/Linus_Torvalds) started the kernel under a GNU license back in the early 90's. Anyone can contribute code to the kernel, as long as it passes a series of revisions and oversight. Because so many people contribute to the code it is constantly being improved.
 
 To use Linux, you need a distribution (shortened to 'distros'). These distros are tantamount to operating systems (think Windows or MacOS). There are many to choose from: free ones like Ubuntu or Tux and enterprise ones like RedHat and CentOS. Whichever distro you choose, they will all act the same under the hood, even if the desktop appearance is different, because they all operate using the same kernel.
 
 Although many Linux applications have easy to use graphical user interfaces (GUIs), a savvy Linux user will learn how to do everything within a terminal. A terminal is an access point into a computer that takes and returns text commands. Computing through a terminal is almost always faster than using a GUI and generally offers the user more options and customization than a GUI. The language Linux-based operating systems use in the terminal is called Bash.
 
-## Bash
-0. ##### Description #####
-  Bash is a powerful programming language that Linux-based operating systems use to perform tasks. Most of the time user-facing programs will use an easier language to debug like Python or MatLab, but you will need to use Bash to navigate around the terminal and launch jobs.
+Bash
+----
+#. Description
+    Bash is a powerful programming language that Linux-based operating systems use to perform tasks. Most of the time user-facing programs will use an easier language to debug like Python or MatLab, but you will need to use Bash to navigate around the terminal and launch jobs.
 
-0. ##### Setting up a sandbox #####
-  A sandbox is a safe environment in which to code without being able to break your computer. In our case we will be using CU's Computer Science coding space :
+#. Setting up a sandbox
+    A sandbox is a safe environment in which to code without being able to break your computer. In our case we will be using CU's Computer Science coding space :
 
-  [https://coding.csel.io/hub/login](https://coding.csel.io/hub/login)
+  `https://coding.csel.io/hub/login <https://coding.csel.io/hub/login>`_
 
   - All you need to do is sign in with your CU credentials.
   - Once logged in click on the 'Default Coding Environment' widget (we'll discuss how this service actually works in a later tutorial).
   - You can bookmark this site for later use.
-  In this code space, you'll see a file tree on the left side and a series of widgets on the right, we'll discuss how to use a few of these over the course of this series.
+  - In this code space, you'll see a file tree on the left side and a series of widgets on the right, we'll discuss how to use a few of these over the course of this series.
   - For now, click on the black 'Terminal' widget in the bottom row. What you've opened is a Linux terminal emulator that we will use to learn basic Bash commands.
 
-0. ##### Basic commands #####
-  Commands in bash are entered directly into the command line, generally in the following format:
+#. Basic commands
+    Commands in bash are entered directly into the command line, generally in the following format:
 
-  `<command> --<option> <input>`
+    .. code-block:: bash
 
-  The command is then executed when you press enter.
+      <command> --<option> <input>
+
+    The command is then executed when you press enter.
 
   - The commands are actually executable scripts somewhere in your PATH (usually in your bin folder).
   - Options or "flags" modify the command in someway, like changing the behavior or explicitly defining some input/output. Most of the time, the long form of the option will have two dashes, as in:
 
-      `ls --all`
+    .. code-block:: bash
+      
+      ls --all
 
-      Whereas one letter abbreviations use one dash:
+    Whereas one letter abbreviations use one dash:
+    
+    .. code-block:: bash
 
-      `ls -a`
+      ls -a
 
-      - Inputs are generally file names or a value required by the option defined.
-      - **As a rule of thumb, most programs will return a brief documentation page when ran with the flag "--help":**
+    - Inputs are generally file names or a value required by the option defined.
+    - As a rule of thumb, most programs will return a brief documentation page when ran with the flag ``--help``:
 
-          `ls --help`
+    .. code-block:: bash
 
-      0. **ls** This first command, 'ls' lists the files and directories in your current folder or 'directory' as it's called in Linux. Two common flags to use with ls are '-a' and '-l'.
-          ```
+      ls --help
+
+    #. ``ls`` This first command, 'ls' lists the files and directories in your current folder or 'directory' as it's called in Linux. Two common flags to use with ls are '-a' and '-l'.
+        
+        .. code-block:: bash
+    
           jovyan@jupyter-shla9937:~$ ls
           cs_class
-          ```  
-          - `ls -a` returns 'all' the files and directories in a give directory, including hidden ones, whose names start with a '.', we'll talk about these in a later tutorial.
-              ```
+     
+        - ``ls -a`` returns 'all' the files and directories in a give directory, including hidden ones, whose names start with a '.', we'll talk about these in a later tutorial.
+            
+            .. code-block:: bash
+
               jovyan@jupyter-shla9937:~$ ls -a
               .   .bash_history            .bashrc  .conda    .config   .empty      .ipynb_checkpoints  .jupyter  .python_history
               ..  .bash_history-00035.tmp  .cache   .condarc  cs_class  .gitconfig  .ipython            .local    .wget-hsts
-              ```
-          - `ls -l` will return the 'long' version of a file name, including permissions, owner, size, and date created.
-              ```
+
+        - ``ls -l`` will return the 'long' version of a file name, including permissions, owner, size, and date created.
+        
+            .. code-block:: bash
               jovyan@jupyter-shla9937:~$ ls -l
               total 4
               drwxr-sr-x 11 jovyan users 4096 Aug 26 17:49 cs_class
-              ```
-      0. **pwd** The next thing we need to know is where we are, we can figure this out by using the command `pwd`, which prints the working directory and will give an output like:
-          ```
+            
+    0. ``pwd`` The next thing we need to know is where we are, we can figure this out by using the command `pwd`, which prints the working directory and will give an output like:
+        
+        .. code-block:: bash
+
           jovyan@jupyter-shla9937:~$ pwd
           /home/jovyan
-          ```
-          Here, each backslash represents another layer of the file tree and is know as the 'absolute path'. Try it and see where you are, as we move about later, try it again to keep oriented.
+        
+        Here, each backslash represents another layer of the file tree and is know as the 'absolute path'. Try it and see where you are, as we move about later, try it again to keep oriented.
 
-      0. **echo** If you simply want to return some text or the value of a variable, you can use `echo <word, phrase or variable>`. Try to return the phrase 'Hello world'.
-          ```
+    0. ``echo`` If you simply want to return some text or the value of a variable, you can use `echo <word, phrase or variable>`. Try to return the phrase 'Hello world'.
+        
+        .. code-block:: bash
+        
           jovyan@jupyter-shla9937:~$ echo Hello world.
           Hello world.
-          ```
-      0. **touch** There are many ways to make a new file, but the most direct way is simply `touch <filename>`. This command creates an empty file that you can then do things with. Try this command using your own filename and use the extension '.txt' **remember not to `touch` a filename that already exists as it will overwrite it.**
-          ```
-          jovyan@jupyter-shla9937:~$ touch dummy.txt
-          jovyan@jupyter-shla9937:~$
-          ```
-      0. **mkdir** Similar to touch, we can also make a directory using `mkdir <directory_name>`.
-          ```
-          jovyan@jupyter-shla9937:~$ mkdir new_directory
-          jovyan@jupyter-shla9937:~$
-          ```
-      0. **cp** One thing you can do with this new file is 'copy' it. This is the first command we've used that requires two arguments: `cp <source_file> <destination_file>`
-          ```
-          jovyan@jupyter-shla9937:~$ cp dummy.txt copy_of_dummy.txt
-          jovyan@jupyter-shla9937:~$
-          ```
-          - **In Bash, spaces separate arguments, therefore don't use them in filenames. If you need to specify a filename with a space in it, you will need to wrap it with quotes. Anything inside a set of quotes is treated as a single argument: `'file name with space.txt'`. Use underscores if you need to separate words: `file_name_without_spaces.txt`** Try to copy the file you made, remember to use a new name, otherwise you'll overwrite it.
-          - We can also copy the directory we made by using `cp -r <directory_name> <new_name>`. The '-r' here stands for 'recursively' or 'go through and copy everything in this directory'.
-      0. **rm** Now that we have two files that are copies of each other, we can delete the original. To do this we'll use the `rm` or 'remove' command, here we need only specify the file to remove:  
-          - `rm <filename>`. Try it.
-          - Now try to remove the copied directory we just made. Bash is smart like this and doesn't want us to remove a directory on accident. To remove an entire directory we will have to do it recursively: `rm -r <directory_name>`
-      0. *Direct.* To 'direct' the output of a function into a file, we can use `<some_function> > <filename>`. **Be careful, as this function will overwrite whatever is in a file.** Try using the `echo` function to write a phrase into a .txt file.
-      0. **cat** To figure out if we successful in writing to the file, we can use `cat <filename>`. It is a quick way to read all the contents of file. The caveat here is that it will read ALL the contents, no matter how long.
-          ```
-          jovyan@jupyter-shla9937:~$ cat dummy.txt
-          This is a file called dummy.
-          ```
-      0. **head** This is where `head -n <#> <filename>` comes in handy. It will only read the first number of lines specified with `-n` (if you don't use the n flag, it will read 20 lines).
-          ```
-          jovyan@jupyter-shla9937:~$ head -n 4 dummy.txt
-          This is a file called dummy.
-          line2
-          line3
-          line4
-          ```
-      0. **tail** Tail is the opposite of head; it reads the last number of lines you specify `tail -n <#> <filename>`.
-      0. *Append.* If you'd like to add something to the end of file you can use the double carrot `echo <phrase> >> <filename>`
-      0. *Pipe.* Finally, to put multiple functions together, use the `|`. This function takes the output from the previous function and inputs it into the next one. This is called piping. Try something like `mkdir <directory_name> | cd <directory_name> | touch <new_file | echo <phrase> > <new_file> | cat <new_file> `.
+        
+    0. **touch** There are many ways to make a new file, but the most direct way is simply `touch <filename>`. This command creates an empty file that you can then do things with. Try this command using your own filename and use the extension '.txt' **remember not to `touch` a filename that already exists as it will overwrite it.**
+        ```
+        jovyan@jupyter-shla9937:~$ touch dummy.txt
+        jovyan@jupyter-shla9937:~$
+        ```
+    0. **mkdir** Similar to touch, we can also make a directory using `mkdir <directory_name>`.
+        ```
+        jovyan@jupyter-shla9937:~$ mkdir new_directory
+        jovyan@jupyter-shla9937:~$
+        ```
+    0. **cp** One thing you can do with this new file is 'copy' it. This is the first command we've used that requires two arguments: `cp <source_file> <destination_file>`
+        ```
+        jovyan@jupyter-shla9937:~$ cp dummy.txt copy_of_dummy.txt
+        jovyan@jupyter-shla9937:~$
+        ```
+        - **In Bash, spaces separate arguments, therefore don't use them in filenames. If you need to specify a filename with a space in it, you will need to wrap it with quotes. Anything inside a set of quotes is treated as a single argument: `'file name with space.txt'`. Use underscores if you need to separate words: `file_name_without_spaces.txt`** Try to copy the file you made, remember to use a new name, otherwise you'll overwrite it.
+        - We can also copy the directory we made by using `cp -r <directory_name> <new_name>`. The '-r' here stands for 'recursively' or 'go through and copy everything in this directory'.
+    0. **rm** Now that we have two files that are copies of each other, we can delete the original. To do this we'll use the `rm` or 'remove' command, here we need only specify the file to remove:  
+        - `rm <filename>`. Try it.
+        - Now try to remove the copied directory we just made. Bash is smart like this and doesn't want us to remove a directory on accident. To remove an entire directory we will have to do it recursively: `rm -r <directory_name>`
+    0. *Direct.* To 'direct' the output of a function into a file, we can use `<some_function> > <filename>`. **Be careful, as this function will overwrite whatever is in a file.** Try using the `echo` function to write a phrase into a .txt file.
+    0. **cat** To figure out if we successful in writing to the file, we can use `cat <filename>`. It is a quick way to read all the contents of file. The caveat here is that it will read ALL the contents, no matter how long.
+        ```
+        jovyan@jupyter-shla9937:~$ cat dummy.txt
+        This is a file called dummy.
+        ```
+    0. **head** This is where `head -n <#> <filename>` comes in handy. It will only read the first number of lines specified with `-n` (if you don't use the n flag, it will read 20 lines).
+        ```
+        jovyan@jupyter-shla9937:~$ head -n 4 dummy.txt
+        This is a file called dummy.
+        line2
+        line3
+        line4
+        ```
+    0. **tail** Tail is the opposite of head; it reads the last number of lines you specify `tail -n <#> <filename>`.
+    0. *Append.* If you'd like to add something to the end of file you can use the double carrot `echo <phrase> >> <filename>`
+    0. *Pipe.* Finally, to put multiple functions together, use the `|`. This function takes the output from the previous function and inputs it into the next one. This is called piping. Try something like `mkdir <directory_name> | cd <directory_name> | touch <new_file | echo <phrase> > <new_file> | cat <new_file> `.
 
 0. ##### Navigation #####
     0. **cd** To navigate from directory to directory, we can use `cd` or 'change directory'.

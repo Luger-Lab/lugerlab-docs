@@ -6,7 +6,7 @@ Goal
 To give a basic introduction to coding (in Bash) and how to use Linux based machines.
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
 
    Linux <linux>
    Bash <bash>
@@ -42,7 +42,7 @@ Bash
 
       <command> --<option> <input>
 
-    The command is then executed when you press enter.
+    The command is executed when you press enter.
 
   - The commands are actually executable scripts somewhere in your PATH (usually in your bin folder).
   - Options or "flags" modify the command in someway, like changing the behavior or explicitly defining some input/output. Most of the time, the long form of the option will have two dashes, as in:

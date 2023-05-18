@@ -10,7 +10,7 @@ To give a basic introduction to coding (in Bash) and how to use Linux based mach
 
     #linux
 
-.._linux:
+.. _linux:
 
 Linux
 -----

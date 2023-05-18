@@ -8,6 +8,10 @@ To give a basic introduction to coding (in Bash) and how to use Linux based mach
 .. toctree::
    :maxdepth: 1
 
+    #linux
+
+.._linux
+
 Linux
 -----
 Linux is the kernel on which most high performance computing (HPC) is done. A kernel is the software that allows an operating system to control physical hardware. The Linux kernel is based on UNIX and is open source and free to use by anyone, as its creator `Linus Tuvolds <https://en.wikipedia.org/wiki/Linus_Torvalds>`_ started the kernel under a GNU license back in the early 90's. Anyone can contribute code to the kernel, as long as it passes a series of revisions and oversight. Because so many people contribute to the code it is constantly being improved.

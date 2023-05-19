@@ -14,6 +14,9 @@ To give a basic introduction to coding (in Bash) and how to use Linux based mach
     - :ref:`if`
     - :ref:`while`
     - :ref:`text editors`
+    - :ref:`running`
+    - :ref:`connecting`
+    - :ref:`advanced`
 
 .. _linux:
 
@@ -298,97 +301,125 @@ A while loop runs a command over and over until some condition is not met. It's 
 
 Text editors
 ------------
+
 #. ``Nano`` Nano is one of the simplest command line text editors you can use and is installed on almost all Linux machines. It is great for quick edits, but is hard to debug unless you are intimately familiar with your script.
+    
     - ``nano <new_file>`` will create a file and open it in the edit (a common behavior with most editors)
     - move around with arrow keys
     - ``ctrl+x``` exits the program, but asks if you want to save your file as the same name or a different one. Answer `y` to save and exit or `n` to exit without saving.
-    - see more: `https://www.nano-editor.org/docs.php`_
+    - see more: https://www.nano-editor.org/docs.php
 
 #. ``Vim`` Vim is one of the most widespread command line text editors because it color codes text and helps the use more than nano. Vim suffers from terrible documentation although you can always google your question to figure it out.
+   
     - ``vi <new_file>`` creates and opens a file
     - Vim has two modes: edit and command. When in edit mode, you can make changes to your document.
     - ``esc`` gets you from the edit mode to command input mode (you can't exit until you get to command mode).
     - ``:q`` quits the editor without saving
     - ``:qw`` quits and writes (saves) the file
-    - some documentation: `https://www.vim.org/`_
+    - some documentation: https://www.vim.org/
 
 #. ``Gedit`` Gedit is a graphical editor that may not come installed on your Linux machine, but many find easy to use.
+  
     - ``gedit <new_file>`` creates and opens a gui with your file to edit it.
-    - Documentation: `https://help.gnome.org/users/gedit/stable/`_
-#. ``Atom`` A really powerful graphical text editor that I like to use is called Atom and is built by Github, specifically to work well with Github. You can downloaded it and find out more at `https://atom.io/`_
+    - Documentation: https://help.gnome.org/users/gedit/stable/
+
+#. ``Atom`` A really powerful graphical text editor that I like to use is called Atom and is built by Github, specifically to work well with Github. You can downloaded it and find out more at https://atom.io/
 #. ``VScode`` Is another really good GUI editor made my Microsoft
 
-0. ##### Running scripts #####
-    Now that we know how to use bash and edit files, we can make scripts. Scripts are files that contain a series of commands that we can run, use to streamline pipelines, and share with others.
-        - `<program_name> <script_name>` is the general formula for running scripts.
-        - `bash <script.sh>` is how we can run a script using bash. The file extension `.sh` is often used to specify a bash specific script.
-        - Eventually, we will learn how to input values into the script and how to make them executable.
+.. _running:
 
-0. ##### Connecting to remote computers #####
-    0. *ssh.* To log into a terminal securely from one Linux (or Mac) machine to another you can open a terminal and use `ssh <user>@<computer_address>`. To stop the connection use `exit`.
-    0. *PuTTY.* [PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/) allows Windows machines to ssh into Linux machines using a GUI to produce a terminal emulator on the Windows end.
+Running scripts
+---------------
 
-0. ##### Advanced commands #####
-    0. **top** Checks jobs running in the local environment.
-    0. **crtl+c** Kills the currently running job in a terminal. Can be dangerous as it simply interrupts.
-    0. **history** Displays inputs to your command line back a certain amount of time. Useful for remembering how tou did something you forgot to write down or put in a script.
-    0. **clear** Clears out all of the displayed command line (not your history).
-    0. **\*** This is the symbol for a 'wildcard' it will do your command on everything matching your pattern. `cat *.txt` will read all text files in your directory. `mv red* new_red_folder` will move anything starting with 'red' into the 'new_red_folder'.
-    0. **rsync** A smart `cp`. Use `rsyn -auP source_directory destination_directory` to make a copy of a folder. Running this command a second time will update and existing files and copy new ones. This makes keeping a copy of a file super simple becuase you don't have to copy every single file each time, just ones that have changed.
-    0. **grep** Use `grep "<keyword>"` to find a matching pattern in a list of files or `grep "<keyword>" <file_name>` to look inside of a file and find a keyword.
-    0. **screen** A powerful tool for keeping a terminal alive and returning to it later.
-        - `screen -S <screen_name>` creates a screen_name
-        - `ctrl+a+d` detaches the screen and allows it to run even if you logout or disconnect your computer (not if it gets turned off).
-        - `screen -r <screen_name>` reatches the screen session.
-        - `exit` from inside the screen will kill the screen session.
-    0. **sudo** 'Super User Do' can be placed in front of commands that require superuser privileges. You usually don't have the ability to use this unless it's on your own computer. **If you google something and it tells you to use sudo to fix it, don't. Sudo commands can irreversibly mess up your computer.**  
+Now that we know how to use bash and edit files, we can make scripts. Scripts are files that contain a series of commands that we can run, use to streamline pipelines, and share with others.
+    - ``<program_name> <script_name>`` is the general formula for running scripts.
+    - ``bash <script.sh>`` is how we can run a script using bash. The file extension ``.sh`` is often used to specify a bash specific script.
+    - Eventually, we will learn how to input values into the script and how to make them executable.
 
-## Slurm
-  0. ##### Description #####
-  [SLURM](https://slurm.schedmd.com/overview.html) is a workload manager common to most HPC clusters that allows users to submit jobs to it and then allocates resources based on a number of parameters. We will use this to do work on the [BioKEM](https://cu-biokem.github.io/BioKEM_docs/) cluster. There many advantages to running jobs on clusters including access to orders of magnitude more resources, reproducible environments, and the ability to maximize computing efficiency.
+.. _connecting:
 
-  0. ##### Sbatch scripts #####
-  Sbatch scripts are the scripts SLURM requires. They start with a header which contains information that SLURM will use to allocate resources and run the script. There are four main parts of an Sbatch script:
+Connecting to remote computers
+------------------------------
+
+#. ``ssh`` To log into a terminal securely from one Linux (or Mac) machine to another you can open a terminal and use ``ssh <user>@<computer_address>``. To stop the connection use ``exit``.
+#. ``PuTTY`` `PuTTY <https://www.chiark.greenend.org.uk/~sgtatham/putty/>`_` allows Windows machines to ssh into Linux machines using a GUI to produce a terminal emulator on the Windows end.
+
+.. _advanced:
+
+Advanced commands
+-----------------
+
+#. ``top`` Checks jobs running in the local environment.
+#. ``crtl+c`` Kills the currently running job in a terminal. Can be dangerous as it simply interrupts.
+#. ``history`` Displays inputs to your command line back a certain amount of time. Useful for remembering how tou did something you forgot to write down or put in a script.
+#. ``clear`` Clears out all of the displayed command line (not your history).
+#. ``*`` This is the symbol for a 'wildcard' it will do your command on everything matching your pattern. ``cat *.txt`` will read all text files in your directory. ``mv red* new_red_folder`` will move anything starting with 'red' into the 'new_red_folder'.
+#. ``rsync`` A smart ``scp``. Use ``rsyn -auP source_directory destination_directory`` to make a copy of a folder. Running this command a second time will update and existing files and copy new ones. This makes keeping a copy of a file super simple becuase you don't have to copy every single file each time, just ones that have changed.
+#. ``grep`` Use ``grep "<keyword>"`` to find a matching pattern in a list of files or ``grep "<keyword>" <file_name>`` to look inside of a file and find a keyword.
+#. ``screen`` A powerful tool for keeping a terminal alive and returning to it later.
+        - ``screen -S <screen_name>`` creates a screen_name
+        - ``ctrl+a+d`` detaches the screen and allows it to run even if you logout or disconnect your computer (not if it gets turned off).
+        - ``screen -r <screen_name>`` reatches the screen session.
+        - ``exit`` from inside the screen will kill the screen session.
+#. ``sudo`` 'Super User Do' can be placed in front of commands that require superuser privileges. You usually don't have the ability to use this unless it's on your own computer. **If you google something and it tells you to use sudo to fix it, don't. Sudo commands can irreversibly mess up your computer.**  
+
+.. _slurm:
+
+Slurm
+-----
+`SLURM <https://slurm.schedmd.com/overview.html>`_ is a workload manager common to most HPC clusters that allows users to submit jobs to it and then allocates resources based on a number of parameters. We will use this to do work on the `BioKEM <https://cu-biokem.github.io/BioKEM_docs/>`_ cluster. There many advantages to running jobs on clusters including access to orders of magnitude more resources, reproducible environments, and the ability to maximize computing efficiency.
+
+#. Sbatch scripts - the scripts SLURM requires. They start with a header which contains information that SLURM will use to allocate resources and run the script. There are four main parts of an Sbatch script:
+     
       - Specification of which language to interpret the script. This section is denoted by a shebang followed by the path to the binary, in most cases: `#!/bin/bash`
       - Next are all of the SLURM parameters. Which ones are required are cluster specific, but generally you should be as explicit as possible, we'll talk more about these parameters in the [How computers work](https://luger-lab.github.io/coding-tutorials/basic_computing_computers/) tutorial.
-      - Then, you'll load all of the modules you need to run your program `module load <modules>`.
+      - Then, you'll load all of the modules you need to run your program ``module load <modules>``.
       - Finally, you can run your commands.
       - You can use the .sbatch file extension to denote files
-          ```
-          #!/bin/bash
-          #SBATCH -p <partition> # Partition or queue.
-          #SBATCH --job-name=<job_name> # Job name
-          #SBATCH --mail-type=END # Mail events (NONE, BEGIN, END, FAIL, ALL)
-          #SBATCH --mail-user=<email@colorado.edu>
-          #SBATCH --nodes=<#> # Only use a single node
-          #SBATCH --cpus-per-task=50 # cpus
-          #SBATCH --mem=24gb # Memory limit
-          #SBATCH --time=24:00:00 # Time limit hrs:min:sec
-          #SBATCH --output=/Users/%u/slurmfiles_out/slurm_%j.out # Standard output and error log
-          #SBATCH --error=/Users/%u/slurmfiles_err/slurm_%j.err # %j inserts job number
+          
+          .. code-block:: bash
 
-          module load <modules>
-          <commands>
-          ```
-  0. ##### Queues #####
-  When you submit a job to SLURM, it goes into a queue where it wait to run.
+            #!/bin/bash
+            #SBATCH -p <partition> # Partition or queue.
+            #SBATCH --job-name=<job_name> # Job name
+            #SBATCH --mail-type=END # Mail events (NONE, BEGIN, END, FAIL, ALL)
+            #SBATCH --mail-user=<email@colorado.edu>
+            #SBATCH --nodes=<#> # Only use a single node
+            #SBATCH --cpus-per-task=50 # cpus
+            #SBATCH --mem=24gb # Memory limit
+            #SBATCH --time=24:00:00 # Time limit hrs:min:sec
+            #SBATCH --output=/Users/%u/slurmfiles_out/slurm_%j.out # Standard output and error log
+            #SBATCH --error=/Users/%u/slurmfiles_err/slurm_%j.err # %j inserts job number
+
+            module load <modules>
+            <commands>
+          
+ #. Queues - When you submit a job to SLURM, it goes into a queue where it wait to run.
+      
       - Running the command `squeue` shows you what is going on in the cluster's queue:
-          ```
-          fiji-1:~$ squeue
-          JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
-          7861375      long    job_0 ding1018  R 7-13:11:09      1 fijinode-60
-          7874945     titan nf-dreg_ lysa8537 PD       0:00      1 (Resources)
-          7874946     titan nf-dreg_ lysa8537 PD       0:00      1 (Priority)
-          ```
-      - You get cursory information about everyone's jobs on the cluster and see where it's running (node name), if it's at the top of the queue waiting for resources to open up (Resources), or if it's lower in the queue waiting for other jobs to run (Priority)
-  0. ##### Out and error files #####
-  Running an Sbatch job will make two files with the jobid followed by the extensions .out or .err. You will need to you specify the folders you want these deposited into in your Sbtach header. The .out (output) file will give you any outputs that would normally appear on the command line during the run. The .err (error) file is useful for debugging and understanding what went wrong during failed runs.
-  0. ##### Starting, stopping, and monitoring jobs #####
-      - To start a single Sbatch job use `sbatch <script_name.script` this will give you a jobid that you can use to monitor your job status.
-      - To stop a job that you no longer want to run or is failing in someway use `scancel <jobid>`. You can only cancel your own jobs.
-      - To check the status of all the jobs in a queue use `squeue` if you only want to see your jobs `squeue -u <your_user>`
+          
+          .. code-block:: bash
 
-## Practice
-0. Use a text editor to make and run a bash script that produces a text file containing a message.
-0. Use a text editor to make and run a bash script that uses a loop to append a message 20 times times onto the previous text file.
-0. Use a text editor to make and run a bash script that creates an array of file names, then uses a for loop to create all of the files.
+            fiji-1:~$ squeue
+            JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
+            7861375      long    job_0 ding1018  R 7-13:11:09      1 fijinode-60
+            7874945     titan nf-dreg_ lysa8537 PD       0:00      1 (Resources)
+            7874946     titan nf-dreg_ lysa8537 PD       0:00      1 (Priority)
+          
+      - You get cursory information about everyone's jobs on the cluster and see where it's running (node name), if it's at the top of the queue waiting for resources to open up (Resources), or if it's lower in the queue waiting for other jobs to run (Priority)
+
+#. Out and error files - Running an Sbatch job will make two files with the jobid followed by the extensions .out or .err. You will need to you specify the folders you want these deposited into in your Sbtach header. The .out (output) file will give you any outputs that would normally appear on the command line during the run. The .err (error) file is useful for debugging and understanding what went wrong during failed runs.
+#. Starting, stopping, and monitoring jobs
+
+    - To start a single Sbatch job use ``sbatch <script_name.script`` this will give you a jobid that you can use to monitor your job status.
+    - To stop a job that you no longer want to run or is failing in someway use ``scancel <jobid>``. You can only cancel your own jobs.
+    - To check the status of all the jobs in a queue use ``squeue`` if you only want to see your jobs ``squeue -u <your_user>``
+
+.. _practice
+
+Practice
+--------
+
+#. Use a text editor to make and run a bash script that produces a text file containing a message.
+#. Use a text editor to make and run a bash script that uses a loop to append a message 20 times times onto the previous text file.
+#. Use a text editor to make and run a bash script that creates an array of file names, then uses a for loop to create all of the files.

@@ -5,7 +5,8 @@ Goal
 ----
 To give a basic introduction to coding (in Bash) and how to use Linux based machines.
 
-:ref:`linux`
+    - :ref:`linux`
+    - :ref:`bash`
 
 .. _linux:
 
@@ -16,6 +17,8 @@ Linux is the kernel on which most high performance computing (HPC) is done. A ke
 To use Linux, you need a distribution (shortened to 'distros'). These distros are tantamount to operating systems (think Windows or MacOS). There are many to choose from: free ones like Ubuntu or Tux and enterprise ones like RedHat and CentOS. Whichever distro you choose, they will all act the same under the hood, even if the desktop appearance is different, because they all operate using the same kernel.
 
 Although many Linux applications have easy to use graphical user interfaces (GUIs), a savvy Linux user will learn how to do everything within a terminal. A terminal is an access point into a computer that takes and returns text commands. Computing through a terminal is almost always faster than using a GUI and generally offers the user more options and customization than a GUI. The language Linux-based operating systems use in the terminal is called Bash.
+
+.. _bash:
 
 Bash
 ----
@@ -100,43 +103,49 @@ Bash
           jovyan@jupyter-shla9937:~$ echo Hello world.
           Hello world.
         
-    #. **touch** There are many ways to make a new file, but the most direct way is simply `touch <filename>`. This command creates an empty file that you can then do things with. Try this command using your own filename and use the extension '.txt' **remember not to `touch` a filename that already exists as it will overwrite it.**
-        ```
-        jovyan@jupyter-shla9937:~$ touch dummy.txt
-        jovyan@jupyter-shla9937:~$
-        ```
-    0. **mkdir** Similar to touch, we can also make a directory using `mkdir <directory_name>`.
-        ```
-        jovyan@jupyter-shla9937:~$ mkdir new_directory
-        jovyan@jupyter-shla9937:~$
-        ```
-    0. **cp** One thing you can do with this new file is 'copy' it. This is the first command we've used that requires two arguments: `cp <source_file> <destination_file>`
-        ```
-        jovyan@jupyter-shla9937:~$ cp dummy.txt copy_of_dummy.txt
-        jovyan@jupyter-shla9937:~$
-        ```
+    #. ``touch`` There are many ways to make a new file, but the most direct way is simply `touch <filename>`. This command creates an empty file that you can then do things with. Try this command using your own filename and use the extension '.txt' **remember not to `touch` a filename that already exists as it will overwrite it.**
+        
+        .. code-block:: bash
+
+          jovyan@jupyter-shla9937:~$ touch dummy.txt
+          jovyan@jupyter-shla9937:~$
+        
+    #. ``mkdir`` Similar to touch, we can also make a directory using `mkdir <directory_name>`.
+        
+        .. code-block:: bash
+          jovyan@jupyter-shla9937:~$ mkdir new_directory
+          jovyan@jupyter-shla9937:~$
+        
+    #. ``cp`` One thing you can do with this new file is 'copy' it. This is the first command we've used that requires two arguments: `cp <source_file> <destination_file>`
+        
+        .. code-block:: bash
+          jovyan@jupyter-shla9937:~$ cp dummy.txt copy_of_dummy.txt
+          jovyan@jupyter-shla9937:~$
+        
         - **In Bash, spaces separate arguments, therefore don't use them in filenames. If you need to specify a filename with a space in it, you will need to wrap it with quotes. Anything inside a set of quotes is treated as a single argument: `'file name with space.txt'`. Use underscores if you need to separate words: `file_name_without_spaces.txt`** Try to copy the file you made, remember to use a new name, otherwise you'll overwrite it.
-        - We can also copy the directory we made by using `cp -r <directory_name> <new_name>`. The '-r' here stands for 'recursively' or 'go through and copy everything in this directory'.
-    0. **rm** Now that we have two files that are copies of each other, we can delete the original. To do this we'll use the `rm` or 'remove' command, here we need only specify the file to remove:  
-        - `rm <filename>`. Try it.
-        - Now try to remove the copied directory we just made. Bash is smart like this and doesn't want us to remove a directory on accident. To remove an entire directory we will have to do it recursively: `rm -r <directory_name>`
-    0. *Direct.* To 'direct' the output of a function into a file, we can use `<some_function> > <filename>`. **Be careful, as this function will overwrite whatever is in a file.** Try using the `echo` function to write a phrase into a .txt file.
-    0. **cat** To figure out if we successful in writing to the file, we can use `cat <filename>`. It is a quick way to read all the contents of file. The caveat here is that it will read ALL the contents, no matter how long.
-        ```
-        jovyan@jupyter-shla9937:~$ cat dummy.txt
-        This is a file called dummy.
-        ```
-    0. **head** This is where `head -n <#> <filename>` comes in handy. It will only read the first number of lines specified with `-n` (if you don't use the n flag, it will read 20 lines).
-        ```
-        jovyan@jupyter-shla9937:~$ head -n 4 dummy.txt
-        This is a file called dummy.
-        line2
-        line3
-        line4
-        ```
-    0. **tail** Tail is the opposite of head; it reads the last number of lines you specify `tail -n <#> <filename>`.
-    0. *Append.* If you'd like to add something to the end of file you can use the double carrot `echo <phrase> >> <filename>`
-    0. *Pipe.* Finally, to put multiple functions together, use the `|`. This function takes the output from the previous function and inputs it into the next one. This is called piping. Try something like `mkdir <directory_name> | cd <directory_name> | touch <new_file | echo <phrase> > <new_file> | cat <new_file> `.
+        - We can also copy the directory we made by using ``cp -r <directory_name> <new_name>``. The '-r' here stands for 'recursively' or 'go through and copy everything in this directory'.
+    #. ``rm`` Now that we have two files that are copies of each other, we can delete the original. To do this we'll use the `rm` or 'remove' command, here we need only specify the file to remove:  
+        - ``rm <filename>``. Try it.
+        - Now try to remove the copied directory we just made. Bash is smart like this and doesn't want us to remove a directory on accident. To remove an entire directory we will have to do it recursively: ``rm -r <directory_name>``
+    #. ``>`` To 'direct' the output of a function into a file, we can use ``<some_function> > <filename>``. **Be careful, as this function will overwrite whatever is in a file.** Try using the ``echo`` function to write a phrase into a .txt file.
+    #. ``cat`` To figure out if we successful in writing to the file, we can use ``cat <filename>``. It is a quick way to read all the contents of file. The caveat here is that it will read ALL the contents, no matter how long.
+        
+        .. code-block:: bash
+          jovyan@jupyter-shla9937:~$ cat dummy.txt
+          This is a file called dummy.
+        
+    #. ``head`` This is where ``head -n <#> <filename>`` comes in handy. It will only read the first number of lines specified with '-n' (if you don't use the n flag, it will read 20 lines).
+        
+        .. code-block:: bash
+          jovyan@jupyter-shla9937:~$ head -n 4 dummy.txt
+          This is a file called dummy.
+          line2
+          line3
+          line4
+        
+    #. ``tail`` Tail is the opposite of head; it reads the last number of lines you specify `tail -n <#> <filename>`.
+    #. ``>>`` If you'd like to add something to the end of file you can use the double carrot `echo <phrase> >> <filename>`
+    #. ``|`` Finally, to put multiple functions together, use the `|`. This function takes the output from the previous function and inputs it into the next one. This is called piping. Try something like `mkdir <directory_name> | cd <directory_name> | touch <new_file | echo <phrase> > <new_file> | cat <new_file> `.
 
 0. ##### Navigation #####
     0. **cd** To navigate from directory to directory, we can use `cd` or 'change directory'.

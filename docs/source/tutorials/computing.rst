@@ -405,11 +405,11 @@ Slurm
         
         .. code-block:: bash
 
-        fiji-1:~$ squeue
-        JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
-        7861375      long    job_0 ding1018  R 7-13:11:09      1 fijinode-60
-        7874945     titan nf-dreg_ lysa8537 PD       0:00      1 (Resources)
-        7874946     titan nf-dreg_ lysa8537 PD       0:00      1 (Priority)
+          fiji-1:~$ squeue
+          JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
+          7861375      long    job_0 ding1018  R 7-13:11:09      1 fijinode-60
+          7874945     titan nf-dreg_ lysa8537 PD       0:00      1 (Resources)
+          7874946     titan nf-dreg_ lysa8537 PD       0:00      1 (Priority)
         
     - You get cursory information about everyone's jobs on the cluster and see where it's running (node name), if it's at the top of the queue waiting for resources to open up (Resources), or if it's lower in the queue waiting for other jobs to run (Priority)
 

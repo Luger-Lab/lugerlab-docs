@@ -17,6 +17,8 @@ To give a basic introduction to coding (in Bash) and how to use Linux based mach
     - :ref:`running`
     - :ref:`connecting`
     - :ref:`advanced`
+    - :ref:`slurm`
+    - :ref:`practice`
 
 .. _linux:
 

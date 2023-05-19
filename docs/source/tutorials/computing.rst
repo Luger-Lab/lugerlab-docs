@@ -220,7 +220,7 @@ For Loops
 ---------
 Now that you can use variables and arrays, you can use loops to iterate through those arrays and perform functions.
 
-``For Loops`` A 'for loop' will iterate through all the elements of an array and perform the same function, as in 'for each element, do this' and that is actually how the syntax works in bash.
+A 'for loop' will iterate through all the elements of an array and perform the same function, as in 'for each element, do this' and that is actually how the syntax works in bash.
 
     - First, declare the for loop, variable to be iterated, and iterable element through which to iterate and add ``; do``:
         
@@ -286,6 +286,7 @@ A while loop runs a command over and over until some condition is not met. It's 
     - The basic syntax is:
 
         .. code-block:: bash
+          
           while [ <condition> ]
           do
               [ <command> ]

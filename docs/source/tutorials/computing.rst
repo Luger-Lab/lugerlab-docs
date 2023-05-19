@@ -9,6 +9,7 @@ To give a basic introduction to coding (in Bash) and how to use Linux based mach
     - :ref:`bash`
     - :ref:`navigation`
     - :ref:`variables`
+    - :ref:`arrays`
 
 .. _linux:
 
@@ -98,14 +99,14 @@ Bash
         
         Here, each backslash represents another layer of the file tree and is know as the 'absolute path'. Try it and see where you are, as we move about later, try it again to keep oriented.
 
-    #. ``echo`` If you simply want to return some text or the value of a variable, you can use `echo <word, phrase or variable>`. Try to return the phrase 'Hello world'.
+    #. ``echo`` If you simply want to return some text or the value of a variable, you can use ``echo <word, phrase or variable>``. Try to return the phrase 'Hello world'.
         
         .. code-block:: bash
         
           jovyan@jupyter-shla9937:~$ echo Hello world.
           Hello world.
         
-    #. ``touch`` There are many ways to make a new file, but the most direct way is simply `touch <filename>`. This command creates an empty file that you can then do things with. Try this command using your own filename and use the extension '.txt' **remember not to `touch` a filename that already exists as it will overwrite it.**
+    #. ``touch`` There are many ways to make a new file, but the most direct way is simply ``touch <filename>``. This command creates an empty file that you can then do things with. Try this command using your own filename and use the extension '.txt' **remember not to ``touch`` a filename that already exists as it will overwrite it.**
         
         .. code-block:: bash
 
@@ -151,9 +152,9 @@ Bash
           line3
           line4
         
-    #. ``tail`` Tail is the opposite of head; it reads the last number of lines you specify `tail -n <#> <filename>`.
-    #. ``>>`` If you'd like to add something to the end of file you can use the double carrot `echo <phrase> >> <filename>`
-    #. ``|`` Finally, to put multiple functions together, use the `|`. This function takes the output from the previous function and inputs it into the next one. This is called piping. Try something like `mkdir <directory_name> | cd <directory_name> | touch <new_file | echo <phrase> > <new_file> | cat <new_file> `.
+    #. ``tail`` Tail is the opposite of head; it reads the last number of lines you specify ``tail -n <#> <filename>``.
+    #. ``>>`` If you'd like to add something to the end of file you can use the double carrot ``echo <phrase> >> <filename>``
+    #. ``|`` Finally, to put multiple functions together, use the ``|``. This function takes the output from the previous function and inputs it into the next one. This is called piping. Try something like ``mkdir <directory_name> | cd <directory_name> | touch <new_file | echo <phrase> > <new_file> | cat <new_file> ``.
 
 .. _navigation:
 
@@ -161,6 +162,7 @@ Navigation
 ----------
 
     #. ``cd`` To navigate from directory to directory, we can use ``cd`` or 'change directory'.
+        
         - We can move into a deeper directory by ``cd <directory name>``
         - Up a directory with ``cd ..`` ('..' represents the parent directory)
         - The same directory ``cd .`` ('.' represents your current directory, we'll use it later)
@@ -184,12 +186,17 @@ Navigation
 
 Variables
 ---------
-    - Variables can be defined in bash using the syntax: `<varibale_name>=<variable_value>`.
-    - You can then call the variable using `$<variable_name>`.
-    - And clear its value with `unset <variable_name>`.
-    - Try setting up a variable and calling its value with the `echo` command.
+    
+    - Variables can be defined in bash using the syntax: ``<varibale_name>=<variable_value>``.
+    - You can then call the variable using ``$<variable_name>``.
+    - And clear its value with ``unset <variable_name>``.
+    - Try setting up a variable and calling its value with the ``echo`` command.
 
-0. ##### Arrays #####
+.. _arrays:
+
+Arrays
+------
+
     Lists in many programming languages are called 'arrays' in Bash. Simply put and array is an ordered list of values (numbers, strings, ect.) that you can iterate through.
 
     0. Make an empty array `<array_name> = ()`

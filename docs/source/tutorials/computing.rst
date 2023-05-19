@@ -17,7 +17,7 @@ To give a basic introduction to coding (in Bash) and how to use Linux based mach
     - :ref:`running`
     - :ref:`connecting`
     - :ref:`advanced`
-    - :ref:`SLURM`
+    - :ref:`slurm anchor`
     - :ref:`practice`
 
 .. _linux:
@@ -368,7 +368,7 @@ Advanced commands
 
 #. ``sudo`` 'Super User Do' can be placed in front of commands that require superuser privileges. You usually don't have the ability to use this unless it's on your own computer. **If you google something and it tells you to use sudo to fix it, don't. Sudo commands can irreversibly mess up your computer.**  
 
-.. _SLURM:
+.. _slurm anchor:
 
 SLURM
 -----

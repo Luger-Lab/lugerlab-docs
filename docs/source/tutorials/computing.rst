@@ -368,7 +368,7 @@ Advanced commands
 
 #. ``sudo`` 'Super User Do' can be placed in front of commands that require superuser privileges. You usually don't have the ability to use this unless it's on your own computer. **If you google something and it tells you to use sudo to fix it, don't. Sudo commands can irreversibly mess up your computer.**  
 
-.. _SLURM
+.. _SLURM:
 
 SLURM
 -----

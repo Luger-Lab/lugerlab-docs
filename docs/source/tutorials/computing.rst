@@ -130,7 +130,7 @@ Bash
         - In Bash, spaces separate arguments, therefore don't use them in filenames. If you need to specify a filename with a space in it, you will need to wrap it with quotes. Anything inside a set of quotes is treated as a single argument: ``'file name with space.txt'``. Use underscores if you need to separate words: ``file_name_without_spaces.txt`` Try to copy the file you made, remember to use a new name, otherwise you'll overwrite it.
         - We can also copy the directory we made by using ``cp -r <directory_name> <new_name>``. The '-r' here stands for 'recursively' or 'go through and copy everything in this directory'.
 
-    #. ``rm`` Now that we have two files that are copies of each other, we can delete the original. To do this we'll use the ``rm`` or 'remove' command, here we need only specify the file to remove
+    #. ``rm`` Now that we have two files that are copies of each other, we can delete the original. To do this we'll use the ``rm`` or 'remove' command, here we need only specify the file to remove:
         
         - ``rm <filename>`` Try it.
         - Now try to remove the copied directory we just made. Bash is smart like this and doesn't want us to remove a directory on accident. To remove an entire directory we will have to do it recursively: ``rm -r <directory_name>``

@@ -40,7 +40,7 @@ Bash
 #. Setting up a sandbox
     A sandbox is a safe environment in which to code without being able to break your computer. In our case we will be using CU's Computer Science coding space :
 
-    `https://coding.csel.io/hub/login <https://coding.csel.io/hub/login>`_
+    https://coding.csel.io/hub/login
 
     - All you need to do is sign in with your CU credentials.
     - Once logged in click on the 'Default Coding Environment' widget (we'll discuss how this service actually works in a later tutorial).
@@ -334,6 +334,7 @@ Running scripts
 ---------------
 
 Now that we know how to use bash and edit files, we can make scripts. Scripts are files that contain a series of commands that we can run, use to streamline pipelines, and share with others.
+   
     - ``<program_name> <script_name>`` is the general formula for running scripts.
     - ``bash <script.sh>`` is how we can run a script using bash. The file extension ``.sh`` is often used to specify a bash specific script.
     - Eventually, we will learn how to input values into the script and how to make them executable.
@@ -344,7 +345,7 @@ Connecting to remote computers
 ------------------------------
 
 #. ``ssh`` To log into a terminal securely from one Linux (or Mac) machine to another you can open a terminal and use ``ssh <user>@<computer_address>``. To stop the connection use ``exit``.
-#. ``PuTTY`` `PuTTY <https://www.chiark.greenend.org.uk/~sgtatham/putty/>`_` allows Windows machines to ssh into Linux machines using a GUI to produce a terminal emulator on the Windows end.
+#. ``PuTTY`` `PuTTY <https://www.chiark.greenend.org.uk/~sgtatham/putty/>`_ allows Windows machines to ssh into Linux machines using a GUI to produce a terminal emulator on the Windows end.
 
 .. _advanced:
 
@@ -359,10 +360,12 @@ Advanced commands
 #. ``rsync`` A smart ``scp``. Use ``rsyn -auP source_directory destination_directory`` to make a copy of a folder. Running this command a second time will update and existing files and copy new ones. This makes keeping a copy of a file super simple becuase you don't have to copy every single file each time, just ones that have changed.
 #. ``grep`` Use ``grep "<keyword>"`` to find a matching pattern in a list of files or ``grep "<keyword>" <file_name>`` to look inside of a file and find a keyword.
 #. ``screen`` A powerful tool for keeping a terminal alive and returning to it later.
+      
         - ``screen -S <screen_name>`` creates a screen_name
         - ``ctrl+a+d`` detaches the screen and allows it to run even if you logout or disconnect your computer (not if it gets turned off).
         - ``screen -r <screen_name>`` reatches the screen session.
         - ``exit`` from inside the screen will kill the screen session.
+
 #. ``sudo`` 'Super User Do' can be placed in front of commands that require superuser privileges. You usually don't have the ability to use this unless it's on your own computer. **If you google something and it tells you to use sudo to fix it, don't. Sudo commands can irreversibly mess up your computer.**  
 
 .. _slurm:
@@ -373,8 +376,8 @@ Slurm
 
 #. Sbatch scripts - the scripts SLURM requires. They start with a header which contains information that SLURM will use to allocate resources and run the script. There are four main parts of an Sbatch script:
      
-      - Specification of which language to interpret the script. This section is denoted by a shebang followed by the path to the binary, in most cases: `#!/bin/bash`
-      - Next are all of the SLURM parameters. Which ones are required are cluster specific, but generally you should be as explicit as possible, we'll talk more about these parameters in the [How computers work](https://luger-lab.github.io/coding-tutorials/basic_computing_computers/) tutorial.
+      - Specification of which language to interpret the script. This section is denoted by a shebang followed by the path to the binary, in most cases: ``#!/bin/bash``
+      - Next are all of the SLURM parameters. Which ones are required are cluster specific, but generally you should be as explicit as possible, we'll talk more about these parameters in a later tutorial.
       - Then, you'll load all of the modules you need to run your program ``module load <modules>``.
       - Finally, you can run your commands.
       - You can use the .sbatch file extension to denote files

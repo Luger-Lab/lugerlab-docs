@@ -372,6 +372,7 @@ Advanced commands
 
 Slurm
 -----
+
 `SLURM <https://slurm.schedmd.com/overview.html>`_ is a workload manager common to most HPC clusters that allows users to submit jobs to it and then allocates resources based on a number of parameters. We will use this to do work on the `BioKEM <https://cu-biokem.github.io/BioKEM_docs/>`_ cluster. There many advantages to running jobs on clusters including access to orders of magnitude more resources, reproducible environments, and the ability to maximize computing efficiency.
 
 #. Sbatch scripts - the scripts SLURM requires. They start with a header which contains information that SLURM will use to allocate resources and run the script. There are four main parts of an Sbatch script:
@@ -420,7 +421,7 @@ Slurm
     - To stop a job that you no longer want to run or is failing in someway use ``scancel <jobid>``. You can only cancel your own jobs.
     - To check the status of all the jobs in a queue use ``squeue`` if you only want to see your jobs ``squeue -u <your_user>``
 
-.. _practice
+.. _practice:
 
 Practice
 --------

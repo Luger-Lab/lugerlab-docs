@@ -216,39 +216,40 @@ Lists in many programming languages are called 'arrays' in Bash. Simply put and 
 
 .. _loops:
 
-Loops
------
+For Loops
+---------
 Now that you can use variables and arrays, you can use loops to iterate through those arrays and perform functions.
 
-#. ``For Loops`` A 'for loop' will iterate through all the elements of an array and perform the same function, as in 'for each element, do this' and that is actually how the syntax works in bash.
+``For Loops`` A 'for loop' will iterate through all the elements of an array and perform the same function, as in 'for each element, do this' and that is actually how the syntax works in bash.
+
     - First, declare the for loop, variable to be iterated, and iterable element through which to iterate and add ``; do``:
         
         .. code-block:: bash
 
-          for i in ${array1[@]}; do
+            for i in ${array1[@]}; do
         
     - Next, tell the loop what to do with each iteration:
         
         .. code-block:: bash
-          > echo ${array1[i]}
+            > echo ${array1[i]}
         
     - You can add another function or declare the end of the loop and tell Bash to execute it:
         
         .. code-block:: bash
-          > done
+            > done
         
     - Here's an example of a for loop that looks at all the elements in an array and prints one each round:
         
         .. code-block:: bash
-          jovyan@jupyter-shla9937:~$ for i in ${array1[@]}; do
-          > echo ${array1[i]}
-          > done
-          0
-          1
-          2
-          3
-          4
-          5
+            jovyan@jupyter-shla9937:~$ for i in ${array1[@]}; do
+            > echo ${array1[i]}
+            > done
+            0
+            1
+            2
+            3
+            4
+            5
         
 
 .. _if:
@@ -256,6 +257,7 @@ Now that you can use variables and arrays, you can use loops to iterate through 
 If statements
 -------------
 If statements are a powerful tool that allow you to execute commands only if a specific condition has been met. There are three possible conditions in an if statement:
+    
     - ``if`` runs a command if the condition is satisfied.
     - ``else`` runs a command if none of the previous conditions are met.
     - ``elif`` runs a command if the previous if's conditions are unsatisfied and the condition set forth by the elif is satisfied.
@@ -280,6 +282,7 @@ If statements are a powerful tool that allow you to execute commands only if a s
 While loops
 -----------
 A while loop runs a command over and over until some condition is not met. It's kind of like putting an if statement inside of for loop that ends when a condition becomes false.
+   
     - The basic syntax is:
 
         .. code-block:: bash

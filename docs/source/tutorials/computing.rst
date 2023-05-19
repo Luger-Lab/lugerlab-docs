@@ -84,7 +84,7 @@ Bash
               total 4
               drwxr-sr-x 11 jovyan users 4096 Aug 26 17:49 cs_class
             
-    0. ``pwd`` The next thing we need to know is where we are, we can figure this out by using the command `pwd`, which prints the working directory and will give an output like:
+    #. ``pwd`` The next thing we need to know is where we are, we can figure this out by using the command `pwd`, which prints the working directory and will give an output like:
         
         .. code-block:: bash
 
@@ -93,14 +93,14 @@ Bash
         
         Here, each backslash represents another layer of the file tree and is know as the 'absolute path'. Try it and see where you are, as we move about later, try it again to keep oriented.
 
-    0. ``echo`` If you simply want to return some text or the value of a variable, you can use `echo <word, phrase or variable>`. Try to return the phrase 'Hello world'.
+    #. ``echo`` If you simply want to return some text or the value of a variable, you can use `echo <word, phrase or variable>`. Try to return the phrase 'Hello world'.
         
         .. code-block:: bash
         
           jovyan@jupyter-shla9937:~$ echo Hello world.
           Hello world.
         
-    0. **touch** There are many ways to make a new file, but the most direct way is simply `touch <filename>`. This command creates an empty file that you can then do things with. Try this command using your own filename and use the extension '.txt' **remember not to `touch` a filename that already exists as it will overwrite it.**
+    #. **touch** There are many ways to make a new file, but the most direct way is simply `touch <filename>`. This command creates an empty file that you can then do things with. Try this command using your own filename and use the extension '.txt' **remember not to `touch` a filename that already exists as it will overwrite it.**
         ```
         jovyan@jupyter-shla9937:~$ touch dummy.txt
         jovyan@jupyter-shla9937:~$

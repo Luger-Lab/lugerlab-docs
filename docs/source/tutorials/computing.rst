@@ -10,6 +10,10 @@ To give a basic introduction to coding (in Bash) and how to use Linux based mach
     - :ref:`navigation`
     - :ref:`variables`
     - :ref:`arrays`
+    - :ref:`loops`
+    - :ref:`if`
+    - :ref:`while`
+    - :ref:`text editors`
 
 .. _linux:
 
@@ -161,128 +165,154 @@ Bash
 
 Navigation
 ----------
+#. ``cd`` To navigate from directory to directory, we can use ``cd`` or 'change directory'.
+    
+    - We can move into a deeper directory by ``cd <directory name>``
+    - Up a directory with ``cd ..`` ('..' represents the parent directory)
+    - The same directory ``cd .`` ('.' represents your current directory, we'll use it later)
+    - An adjacent directory by specifying a 'relative path' ``cd ../jon``
+    - A specific directory by specifying the absolute path ``cd /home/jon``
+    - Your home directory with either ``cd ~`` or simply ``cd``
 
-    #. ``cd`` To navigate from directory to directory, we can use ``cd`` or 'change directory'.
-        
-        - We can move into a deeper directory by ``cd <directory name>``
-        - Up a directory with ``cd ..`` ('..' represents the parent directory)
-        - The same directory ``cd .`` ('.' represents your current directory, we'll use it later)
-        - An adjacent directory by specifying a 'relative path' ``cd ../jon``
-        - A specific directory by specifying the absolute path ``cd /home/jon``
-        - Your home directory with either ``cd ~`` or simply ``cd``
-   
-    #. ``mv`` Similar to, and much faster than the ``cp`` function, we can use ``mv <source_file> <destination_file>`` to move a file from one location to another. Because you are not actually copying and remove the file, simply changing its location information, this function is often instant. Another use of this function is to rename files (because that is essentially what you are doing). To do this simply ``mv <old_name> <new_name>``, you can also move and rename entire directories.
-    #. ``Tab filling`` One of the biggest timesavers in coding is using the tab key to autofill a function in your path or the name of a file/directory after you have typed the first few characters. Tabbing twice will give you a list of all files or directories in your current directory.
-    #. ``Permissions`` All files and folders on a computer have a set of permissions, which you can view using ``ls -l``. There are three levels of permissions: user, group, and other. And three types of permission in each level: read(r), write(w) and execute(x). These are denoted by sets of 3 letters per level.
-        
-        .. code-block:: bash
+#. ``mv`` Similar to, and much faster than the ``cp`` function, we can use ``mv <source_file> <destination_file>`` to move a file from one location to another. Because you are not actually copying and remove the file, simply changing its location information, this function is often instant. Another use of this function is to rename files (because that is essentially what you are doing). To do this simply ``mv <old_name> <new_name>``, you can also move and rename entire directories.
+#. ``Tab filling`` One of the biggest timesavers in coding is using the tab key to autofill a function in your path or the name of a file/directory after you have typed the first few characters. Tabbing twice will give you a list of all files or directories in your current directory.
+#. ``Permissions`` All files and folders on a computer have a set of permissions, which you can view using ``ls -l``. There are three levels of permissions: user, group, and other. And three types of permission in each level: read(r), write(w) and execute(x). These are denoted by sets of 3 letters per level.
+    
+    .. code-block:: bash
 
-          -rwx------ 1 shla9937 lugerlab 0 Sep  3 16:48 user.txt
-          -rwxrwxr-- 1 shla9937 lugerlab 0 Sep  3 16:48 group.txt
-          -rwxrwxrwx 1 shla9937 lugerlab 0 Sep  3 16:48 other.txt
+        -rwx------ 1 shla9937 lugerlab 0 Sep  3 16:48 user.txt
+        -rwxrwxr-- 1 shla9937 lugerlab 0 Sep  3 16:48 group.txt
+        -rwxrwxrwx 1 shla9937 lugerlab 0 Sep  3 16:48 other.txt
         
 .. _variables:
 
 Variables
----------
-    
-    - Variables can be defined in bash using the syntax: ``<varibale_name>=<variable_value>``.
-    - You can then call the variable using ``$<variable_name>``.
-    - And clear its value with ``unset <variable_name>``.
-    - Try setting up a variable and calling its value with the ``echo`` command.
+---------   
+- Variables can be defined in bash using the syntax: ``<varibale_name>=<variable_value>``
+- You can then call the variable using ``$<variable_name>``
+- And clear its value with ``unset <variable_name>``
+- Try setting up a variable and calling its value with the ``echo`` command.
 
 .. _arrays:
 
 Arrays
 ------
+Lists in many programming languages are called 'arrays' in Bash. Simply put and array is an ordered list of values (numbers, strings, ect.) that you can iterate through.
 
-    Lists in many programming languages are called 'arrays' in Bash. Simply put and array is an ordered list of values (numbers, strings, ect.) that you can iterate through.
+#. Make an empty array ``<array_name> = ()``
+#. Make a filled array ``<array_name> = (<value0> <value1> <value2>)``
+#. Return first value ``${<array_name>}`` (use echo to print the output)
+#. Return specific value ``${<array_name>[i]}`` where i is the index (or position) of the value in the list, remember arrays start indexing at 0.
+#. Return all values ``${<array_name>[@]}``
+    
+    .. code-block:: bash
 
-    0. Make an empty array `<array_name> = ()`
-    0. Make a filled array `<array_name> = (<value0> <value1> <value2>)`
-    0. Return first value `${<array_name>}` (use echo to print the output)
-    0. Return specific value `${<array_name>[i]}` where i is the index (or position) of the value in the list, remember arrays start indexing at 0.
-    0. Return all values `${<array_name>[@]}`
-        ```
         jovyan@jupyter-shla9937:~$ echo ${array1[@]}
         0 1 2 3 4 5
-        ```
-    0. Return array size `${#<array_name>[@]}`
-    0. Change value of first element `<array_name>[0]=<new_value>`
-    0. Append value to list `<array_name>+=(<value>)`
+    
+#. Return array size ``${#<array_name>[@]}``
+#. Change value of first element ``<array_name>[0]=<new_value>``
+#. Append value to list ``<array_name>+=(<value>)``
 
-0. ##### Loops #####
-    Now that you can use variables and arrays, you can use loops to iterate through those arrays and perform functions.
+.. _loops:
 
-    0. *For Loops.* A 'for loop' will iterate through all the elements of an array and perform the same function, as in 'for each element, do this' and that is actually how the syntax works in bash.
-        - First, declare the for loop, variable to be iterated, and iterable element through which to iterate and add `; do`:
-            ```
-            for i in ${array1[@]}; do
-            ```
-        - Next, tell the loop what to do with each iteration:
-            ```
-            > echo ${array1[i]}
-            ```
-        - You can add another function or declare the end of the loop and tell Bash to execute it:
-            ```
-            > done
-            ```
-        - Here's an example of a for loop that looks at all the elements in an array and prints one each round:
-            ```
-            jovyan@jupyter-shla9937:~$ for i in ${array1[@]}; do
-            > echo ${array1[i]}
-            > done
-            0
-            1
-            2
-            3
-            4
-            5
-            ```
-    0. *if statements.* If statements are a powerful tool that allow you to execute commands only if a specific condition has been met. There are three possible conditions in an if statement:
-        - `if` runs a command if the condition is satisfied.
-        - `else` runs a command if none of the previous conditions are met.
-        - `elif` runs a command if the previous if's conditions are unsatisfied and the condition set forth by the elif is satisfied.
-        - the basic syntax for an if statement in bash is:
-            ```
-            if [ <condition> ]
-            then
+Loops
+-----
+Now that you can use variables and arrays, you can use loops to iterate through those arrays and perform functions.
+
+#. ``For Loops`` A 'for loop' will iterate through all the elements of an array and perform the same function, as in 'for each element, do this' and that is actually how the syntax works in bash.
+    - First, declare the for loop, variable to be iterated, and iterable element through which to iterate and add ``; do``:
+        
+        .. code-block:: bash
+
+          for i in ${array1[@]}; do
+        
+    - Next, tell the loop what to do with each iteration:
+        
+        .. code-block:: bash
+          > echo ${array1[i]}
+        
+    - You can add another function or declare the end of the loop and tell Bash to execute it:
+        
+        .. code-block:: bash
+          > done
+        
+    - Here's an example of a for loop that looks at all the elements in an array and prints one each round:
+        
+        .. code-block:: bash
+          jovyan@jupyter-shla9937:~$ for i in ${array1[@]}; do
+          > echo ${array1[i]}
+          > done
+          0
+          1
+          2
+          3
+          4
+          5
+        
+
+.. _if:
+
+If statements
+-------------
+If statements are a powerful tool that allow you to execute commands only if a specific condition has been met. There are three possible conditions in an if statement:
+    - ``if`` runs a command if the condition is satisfied.
+    - ``else`` runs a command if none of the previous conditions are met.
+    - ``elif`` runs a command if the previous if's conditions are unsatisfied and the condition set forth by the elif is satisfied.
+    - the basic syntax for an if statement in bash is:
+        
+        .. code-block:: bash
+
+          if [ <condition> ]
+          then
               <command>
-            elif
+          elif
               <elif_command>
-            else
+          else
               <else_command>
-            fi
-            ```
-        - the `fi` denotes the end of the statement (it is simply if backwards)
-        - if statements are often placed inside loops and can trigger them to end at certain times.
-    0. *While loops.* A while loop runs a command over and over until some condition is not met. It's kind of like putting an if statement inside of for loop that ends when a condition becomes false.
-        - The basic syntax is:
-            ```
-            while [ <condition> ]
-            do
-              [ <command> ]
-            done
-            ```
-        - One caveat with while loops is that if the variable in the condition never changes or will never become false, you'll start an endless while loop. For loops generally iterate through a iterable object of a define size and so usually don't get caught in this behavior.
+          fi
+        
+    - the ``fi`` denotes the end of the statement (it is simply if backwards)
+    - if statements are often placed inside loops and can trigger them to end at certain times.
+    
+.. _while:
 
-0. ##### Text editors #####
-    0. *Nano.* Nano is one of the simplest command line text editors you can use and is installed on almost all Linux machines. It is great for quick edits, but is hard to debug unless you are intimately familiar with your script.
-        - `nano <new_file>` will create a file and open it in the edit (a common behavior with most editors)
-        - move around with arrow keys
-        - `ctrl+x` exits the program, but asks if you want to save your file as the same name or a different one. Answer `y` to save and exit or `n` to exit without saving.
-        - see more: https://www.nano-editor.org/docs.php
-    0. *Vim.* Vim is one of the most widespread command line text editors because it color codes text and helps the use more than nano. Vim suffers from terrible documentation although you can always google your question to figure it out.
-        - `vi <new_file>` creates and opens a file
-        - Vim has two modes: edit and command. When in edit mode, you can make changes to your document.
-        - `esc` gets you from the edit mode to command input mode (you can't exit until you get to command mode).
-        - `:q` quits the editor without saving
-        - `:qw` quits and writes (saves) the file
-        - some documentation: https://www.vim.org/
-    0. *Gedit.* Gedit is a graphical editor that may not come installed on your Linux machine, but many find easy to use.
-        - `gedit <new_file>` creates and opens a gui with your file to edit it.
-        - Documentation: https://help.gnome.org/users/gedit/stable/
-    0. *Atom.* A really powerful graphical text editor that I like to use is called Atom and is built by Github, specifically to work well with Github. You can downloaded it and find out more at https://atom.io/
+While loops
+-----------
+A while loop runs a command over and over until some condition is not met. It's kind of like putting an if statement inside of for loop that ends when a condition becomes false.
+    - The basic syntax is:
+
+        .. code-block:: bash
+          while [ <condition> ]
+          do
+              [ <command> ]
+          done
+        
+    - One caveat with while loops is that if the variable in the condition never changes or will never become false, you'll start an endless while loop. For loops generally iterate through a iterable object of a define size and so usually don't get caught in this behavior.
+
+.. _text editors:
+
+Text editors
+------------
+#. ``Nano`` Nano is one of the simplest command line text editors you can use and is installed on almost all Linux machines. It is great for quick edits, but is hard to debug unless you are intimately familiar with your script.
+    - ``nano <new_file>`` will create a file and open it in the edit (a common behavior with most editors)
+    - move around with arrow keys
+    - ``ctrl+x``` exits the program, but asks if you want to save your file as the same name or a different one. Answer `y` to save and exit or `n` to exit without saving.
+    - see more: `https://www.nano-editor.org/docs.php`_
+
+#. ``Vim`` Vim is one of the most widespread command line text editors because it color codes text and helps the use more than nano. Vim suffers from terrible documentation although you can always google your question to figure it out.
+    - ``vi <new_file>`` creates and opens a file
+    - Vim has two modes: edit and command. When in edit mode, you can make changes to your document.
+    - ``esc`` gets you from the edit mode to command input mode (you can't exit until you get to command mode).
+    - ``:q`` quits the editor without saving
+    - ``:qw`` quits and writes (saves) the file
+    - some documentation: `https://www.vim.org/`_
+
+#. ``Gedit`` Gedit is a graphical editor that may not come installed on your Linux machine, but many find easy to use.
+    - ``gedit <new_file>`` creates and opens a gui with your file to edit it.
+    - Documentation: `https://help.gnome.org/users/gedit/stable/`_
+#. ``Atom`` A really powerful graphical text editor that I like to use is called Atom and is built by Github, specifically to work well with Github. You can downloaded it and find out more at `https://atom.io/`_
+#. ``VScode`` Is another really good GUI editor made my Microsoft
 
 0. ##### Running scripts #####
     Now that we know how to use bash and edit files, we can make scripts. Scripts are files that contain a series of commands that we can run, use to streamline pipelines, and share with others.

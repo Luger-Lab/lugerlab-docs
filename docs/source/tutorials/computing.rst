@@ -170,10 +170,8 @@ Navigation
         - A specific directory by specifying the absolute path ``cd /home/jon``
         - Your home directory with either ``cd ~`` or simply ``cd``
    
-    #. ``mv`` Similar to, and much faster than the ``cp`` function, we can use ``mv <source_file> <destination_file>`` to move a file from one location to another. Because you are not actually copying and remove the file, simply changing its location information, this function is often instant.
-    Another use of this function is to rename files (because that is essentially what you are doing). To do this simply ``mv <old_name> <new_name>``, you can also move and rename entire directories.
-    #. ``Tab filling`` One of the biggest timesavers in coding is using the tab key to autofill a function in your path or the name of a file/directory after you have typed the first few characters.
-    Tabbing twice will give you a list of all files or directories in your current directory.
+    #. ``mv`` Similar to, and much faster than the ``cp`` function, we can use ``mv <source_file> <destination_file>`` to move a file from one location to another. Because you are not actually copying and remove the file, simply changing its location information, this function is often instant. Another use of this function is to rename files (because that is essentially what you are doing). To do this simply ``mv <old_name> <new_name>``, you can also move and rename entire directories.
+    #. ``Tab filling`` One of the biggest timesavers in coding is using the tab key to autofill a function in your path or the name of a file/directory after you have typed the first few characters. Tabbing twice will give you a list of all files or directories in your current directory.
     #. ``Permissions`` All files and folders on a computer have a set of permissions, which you can view using ``ls -l``. There are three levels of permissions: user, group, and other. And three types of permission in each level: read(r), write(w) and execute(x). These are denoted by sets of 3 letters per level.
         
         .. code-block:: bash

@@ -1,5 +1,5 @@
-Negative stain data collection
-==============================
+Data collection
+===============
 *adapted from Johannes Rudolph*
 
 

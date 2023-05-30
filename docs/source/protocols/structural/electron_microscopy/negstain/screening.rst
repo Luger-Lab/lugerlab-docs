@@ -1,5 +1,5 @@
-Negative stain screening
-========================
+Screening
+=========
 *adapted from Johannes Rudolph*
 
 

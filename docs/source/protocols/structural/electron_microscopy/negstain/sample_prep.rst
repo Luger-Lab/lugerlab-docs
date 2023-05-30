@@ -1,5 +1,5 @@
-Negative stain sample prep
-==========================
+Sample prep
+===========
 
 Goal
 ----

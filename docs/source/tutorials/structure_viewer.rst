@@ -1,5 +1,5 @@
-How to make a structure viewer VM
-=================================
+Structure viewer VM
+===================
 
 Goal
 ----

@@ -57,6 +57,7 @@ Other
 
    tutorials/structure_viewer
    tutorials/ultrascan
+   tutorials/robotics
    tutorials/figures
    tutorials/talks
    tutorials/documentation.rst

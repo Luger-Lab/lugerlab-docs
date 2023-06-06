@@ -49,6 +49,15 @@ Molecular dynamics simulations
    tutorials/gromacs
    tutorials/namd
 
+Opentrons robot
+---------------
+
+.. toctree::
+   :maxdepth: 1
+
+   tutorials/robotics
+   tutorials/robot_scripts
+
 Other
 -----
 
@@ -57,7 +66,6 @@ Other
 
    tutorials/structure_viewer
    tutorials/ultrascan
-   tutorials/robotics
    tutorials/figures
    tutorials/talks
    tutorials/documentation.rst

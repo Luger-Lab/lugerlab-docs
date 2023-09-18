@@ -42,6 +42,11 @@ EM/crystallography data processing
 Molecular dynamics simulations
 ------------------------------
 
+MD simulations use physical parameters of atoms to simulate how they 
+interact. There are various approaches, softwares, and forcefields to 
+use for simulations. Choosing the correct set will allow you to gain 
+mechanistic insight into your biomolecular system.
+
 .. toctree::
    :maxdepth: 1
 

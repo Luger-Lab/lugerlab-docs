@@ -1,5 +1,5 @@
-All atom explicit solvent
-=========================
+AMBER
+=====
 
 Adapted from `AMBER tutorial <https://ambermd.org/tutorials/basic/tutorial15/index.php>`_.
 Read the full `manual <https://ambermd.org/doc12/Amber22.pdf>`_. 
@@ -8,6 +8,10 @@ See `github <https://github.com/Luger-Lab/MD-simulations>`
 Introduction
 ~~~~~~~~~~~~
 
+.. image:: amber_workflow.png
+   :width: 300
+   :align: right
+
 AMBER is a suite of molecular dynamics programs that can be used to simulate
 biomolecules at a variety of granularities. It is broken into two main parts.
 AMBERTools, which includes the free-to-use MD engine, ``sander`` which runs on 
@@ -15,9 +19,7 @@ CPUs, as well as various analysis scripts. And AMBER, which is distributed
 through a license and includes the GPU-accelerated engine, ``pmemd``. We will
 be using the ``pmemd`` version of the software.
 
-.. image:: amber_workflow.png
-   :width: 300
-   :align: center
+At the most basic level, MD simulations 
 
 
 All-atom with explicit solvent
@@ -70,6 +72,31 @@ Equilibration is done like explicit solvents, simply keep the above parameters i
 Production
 ----------
 Production is done like explicit solvents, simply keep the above parameters in mind.
+
+Analysis
+--------
+Coarse-grained (implicit solvent)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Prepare structure
+-----------------
+
+
+Minimization
+------------
+
+
+Heating
+-------
+
+
+Equilibration
+-------------
+
+
+Production
+----------
+
 
 Analysis
 --------

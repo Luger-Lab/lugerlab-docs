@@ -19,8 +19,13 @@ CPUs, as well as various analysis scripts. And AMBER, which is distributed
 through a license and includes the GPU-accelerated engine, ``pmemd``. We will
 be using the ``pmemd`` version of the software.
 
-At the most basic level, MD simulations 
+.. image:: hamilitonian.png
+   :width: 300
+   :align: right
 
+At the most basic level, MD simulations randomly move atoms over small timesteps
+into new conformations, calculate the energy of the moves, and either accept or 
+reject those moves. 
 
 All-atom with explicit solvent
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -75,6 +80,7 @@ Production is done like explicit solvents, simply keep the above parameters in m
 
 Analysis
 --------
+
 Coarse-grained (implicit solvent)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

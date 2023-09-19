@@ -3,7 +3,7 @@ AMBER
 
 Adapted from `AMBER tutorial <https://ambermd.org/tutorials/basic/tutorial15/index.php>`_.
 Read the full `manual <https://ambermd.org/doc12/Amber22.pdf>`_. 
-See `github <https://github.com/Luger-Lab/MD-simulations>` for exmple scripts.
+See `github <https://github.com/Luger-Lab/MD-simulations>`_ for exmple scripts.
 
 Introduction
 ~~~~~~~~~~~~

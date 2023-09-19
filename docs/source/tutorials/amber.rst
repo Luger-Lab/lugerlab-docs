@@ -23,9 +23,9 @@ be using the ``pmemd`` version of the software.
    :width: 300
    :align: right
 
-At the most basic level, MD simulations randomly move atoms over small timesteps
-into new conformations, calculate the energy of the moves, and either accept or 
-reject those moves. 
+At the most basic level, each atom in a system is assigned a position and velocities.
+These velocities are described by 
+The atoms are then 
 
 All-atom with explicit solvent
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

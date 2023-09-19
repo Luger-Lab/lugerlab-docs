@@ -34,7 +34,13 @@ acting on each point and multiplying by the mass through the set timestep.
 The motion of such idealized points can be described through a set of Newtonian 
 motion equations (right). Where the bond length and angles are modeled as springs,
 dihedrals through torsion calculations, and van Der Waals interactions through
-the Lennard-Jones potential. These first three terms describe the interaction of 
+the Lennard-Jones potential. 
+
+.. image:: lj-potential.png
+   :width: 300
+   :align: right
+
+These first three terms describe the interaction of 
 bonded atoms and thus have a finite and relatively small number of calculations. 
 The non-bonded interactions described by the Lennard-Jones potential can, in theory 
 describe the interaction of each atom with every other atom in the system and with

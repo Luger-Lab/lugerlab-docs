@@ -50,6 +50,7 @@ mechanistic insight into your biomolecular system.
 .. toctree::
    :maxdepth: 1
 
+   tutorials/md_sims
    tutorials/amber
    tutorials/gromacs
    tutorials/namd

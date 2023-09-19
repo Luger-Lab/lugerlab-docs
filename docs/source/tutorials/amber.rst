@@ -3,7 +3,7 @@ AMBER
 
 Adapted from `AMBER tutorial <https://ambermd.org/tutorials/basic/tutorial15/index.php>`_.
 Read the full `manual <https://ambermd.org/doc12/Amber22.pdf>`_. 
-See `github <https://github.com/Luger-Lab/MD-simulations>` 
+See `github <https://github.com/Luger-Lab/MD-simulations>` for exmple scripts.
 
 Introduction
 ~~~~~~~~~~~~
@@ -18,14 +18,6 @@ AMBERTools, which includes the free-to-use MD engine, ``sander`` which runs on
 CPUs, as well as various analysis scripts. And AMBER, which is distributed 
 through a license and includes the GPU-accelerated engine, ``pmemd``. We will
 be using the ``pmemd`` version of the software.
-
-.. image:: hamilitonian.png
-   :width: 300
-   :align: right
-
-At the most basic level, each atom in a system is assigned a position and velocities.
-These velocities are described by 
-The atoms are then 
 
 All-atom with explicit solvent
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
